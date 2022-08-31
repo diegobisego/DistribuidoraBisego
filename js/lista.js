@@ -20,7 +20,7 @@ const listaProductos = () => {
     let prodClone = lsProduct.cloneNode(lsProduct,true);
     prodClone.children[0].innerText = elem.id
     prodClone.children[1].innerText = elem.tipo
-    prodClone.children[2].innerText = elem.tamanio
+    prodClone.children[2].innerText = elem.tamanio + ' ' + elem.um
     prodClone.children[3].innerText = '$ ' + elem.precio
     prodClone.children[4].innerText = elem.stock 
     

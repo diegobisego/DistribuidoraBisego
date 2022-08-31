@@ -1,5 +1,13 @@
 {
   "productos": [
+    {
+      "id": 1,
+      "tipo": "Aceite Comestible",
+      "tamanio": 5,
+      "um": "L",
+      "precio": 1200,
+      "stock": 5000
+    }
   ],
   "clientes": [
     {
