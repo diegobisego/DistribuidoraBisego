@@ -229,7 +229,7 @@ body {
 
 /*************** FORM CLIENTES ******************/
 
-#inNombreCliente,#inTelefonoCliente, #inDniCuitCliente, #inDomicilioCliente, #inEmailCliente,#idCiudadCliente {
+#inNombreCliente,#inTelefonoCliente, #inDniCuitCliente, #inDomicilioCliente, #inEmailCliente,#inCiudadCliente {
     width: 250px;
 }
 

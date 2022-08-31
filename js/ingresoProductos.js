@@ -60,6 +60,7 @@ boton.addEventListener('click', () => {
   for (const key in productos) {
     if (productos[key].tipo == tipoProducto.value && productos[key].tamanio == tipoTamPeso.value) {
       alertCarga(2,'producto')
+      form.reset() 
       return     
     }
   }

@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) =>{
 
 // ciudades
 let ciudades = ['Villa Maria','Villa Nueva','Cordoba Capital'];
-const idCiudad = document.querySelector('#idCiudadCliente')
+const idCiudad = document.querySelector('#inCiudadCliente')
 
 
 for (const i of ciudades) {

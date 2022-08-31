@@ -1,46 +1,11 @@
 {
   "productos": [
     {
+      "id": 1,
       "tipo": "Aceite Comestible",
       "tamanio": 5,
-      "precio": 2500,
-      "stock": 3455,
-      "id": 1
-    },
-    {
-      "tipo": "Aceitunas",
-      "tamanio": "5",
-      "precio": "4000",
-      "stock": "8000",
-      "id": 2
-    },
-    {
-      "tipo": "Morrones",
-      "tamanio": 800,
       "precio": 1200,
-      "stock": 600,
-      "id": 3
-    },
-    {
-      "tipo": "Vinagre",
-      "tamanio": 10,
-      "precio": 1000,
-      "stock": 5000,
-      "id": 4
-    },
-    {
-      "tipo": "Huevos",
-      "tamanio": 1,
-      "precio": 3243,
-      "stock": 1244,
-      "id": 5
-    },
-    {
-      "id": 6,
-      "tipo": "Tomates",
-      "tamanio": 230,
-      "precio": 23432,
-      "stock": 2423
+      "stock": 4000
     }
   ],
   "clientes": [
@@ -83,7 +48,6 @@
     }
   ],
   "ventas": [
-    {
-    }
+    {}
   ]
 }
