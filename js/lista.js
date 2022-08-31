@@ -24,18 +24,33 @@ const listaProductos = () => {
     prodClone.children[3].innerText = '$ ' + elem.precio
     prodClone.children[4].innerText = elem.stock 
     
-    let btn = prodClone.querySelector("#btnEliminar");    
+    let btnEliminar = prodClone.querySelector("#btnEliminar"); 
+    let btnEditar = prodClone.querySelector('#btnEditar');   
 
     //evento para eliminar el producto
-    btn.addEventListener('click', () => {
-        //sweetAlert
-        alertEliminarConfirm('producto',eliminarProducto)
+    btnEliminar.addEventListener('click', () => {
+      //sweetAlert (esta dentro de Alert.js)
+      alertEliminarConfirm('producto',eliminarProducto)
+    })
+
+    //Boton Editar
+    btnEditar.addEventListener('click', () => {
+      
+     const inEditarPrecio = document.querySelector('#inEditarPrecio')
+     const inEditarStock = document.querySelector('#inEditarStock')
+
+     inEditarPrecio.value = Number(elem.precio);
+     inEditarStock.value = Number(elem.stock);
+
+    // editarProducto();
     })
 
     divLista.appendChild(prodClone)
-  });
+  })
 }
 
+
+/************************** ELIMINAR PRODUCTOS ***************************** */
 
 const eliminarProducto = () => {
   const index = productos.findIndex(item => item.id == elem.id);
@@ -44,4 +59,8 @@ const eliminarProducto = () => {
   productos.splice(index,1)
   parent.parentNode.removeChild(parent)
   localStorage.setItem('productos',JSON.stringify(productos))
+}
+
+
+const editarProducto = () => {
 }
