@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) =>{
   /************************** ARRAYS ADICIONALES ***************************** */
 
 //Carga el select tamaño/peso de productos desd el array
-let tamTipo = ['G','Kg','L','Medianos','Grandes Color','Grandes Blancos'];
+let tamTipo = ['','G','Kg','L','Medianos','Grandes Color','Grandes Blancos'];
 const idUM = document.querySelector('#idUM')
 
 
@@ -17,7 +17,7 @@ for (const i of tamTipo) {
   const option = document.createElement('option');
   idUM.appendChild(option)
   option.innerHTML = i
-  option.setAttribute('value',tamTipo[i])
+  option.setAttribute('value',i)
 }
 
 
@@ -41,10 +41,18 @@ fetch('http://localhost:5000/productos')
 const boton = document.querySelector('#btn-carga');
 
 //traigo por dom todos los textbox y select
-let tipoProducto = document.querySelector('#inTipo');
-let tipoTamPeso = document.querySelector('#inCantidad');
-let precio = document.querySelector('#inPrecio');
-let stock = document.querySelector('#inStock');
+const tipoProducto = document.querySelector('#inTipo');
+const tipoTamPeso = document.querySelector('#inCantidad');
+const precio = document.querySelector('#inPrecio');
+const stock = document.querySelector('#inStock');
+let UM; 
+
+
+idUM.addEventListener('change', (event) => {
+   UM = event.target.value
+})
+
+
 
 //evento de boton
 boton.addEventListener('click', () => { 
@@ -69,7 +77,7 @@ boton.addEventListener('click', () => {
   PostProducto(contadorId,tipoProducto,tipoTamPeso,precio,stock);  
 });
 
-  /************************** FUNCIONES ADICIONALES ***************************** */
+  /************************** FUNCIONES AGREGAR PRODUCTO CON POST ***************************** */
  
 
 
@@ -81,18 +89,15 @@ const PostProducto = (contador,tipoProducto,tipoTamPeso,precio,stock) => {
   headers: {
     'content-type': 'application/json; charset=UTF-8',
   },
-  body: JSON.stringify({
+    body: JSON.stringify({
     id: contador,
     tipo: tipoProducto.value,
     tamanio: Number(tipoTamPeso.value),
+    um: UM,
     precio: Number(precio.value),
     stock: Number(stock.value)
+    })
   })
-})
-  // .then((resp) => resp.json())
-  // .then((data) => {
-  //   alertCarga(1,"Producto");
-  //   })
 }
 
 

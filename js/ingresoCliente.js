@@ -76,7 +76,7 @@ const labelChecked = document.getElementsByName('labelTipoPago')
 btnCargaClientes.addEventListener('click', () => {
   
   let selecTipoPago;
-  console.log(console.log(inCiudadCliente.option[0].text))
+  // console.log(console.log(inCiudadCliente.option[0].text))
 
   for (var i = 0; i <  RadioTipoPago.length; i++) {
     if (RadioTipoPago[i].checked) {

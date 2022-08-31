@@ -1,14 +1,22 @@
-//recupero el array desde el storage
-let productos = JSON.parse(localStorage.getItem('productos'));
+/************************** FETCH GET ***************************** */
+let productos = [];
 
+//Metodo GET para FETCH de productos, para luego comparar contenido
+fetch('http://localhost:5000/productos')
+  .then((res) => res.json())
+  .then((data) => {
+    productos.push(...data);
+    listaProductos() 
+});
 
 //realizo el creado del template
 const divLista = document.querySelector('#lista')
 const temp = document.querySelector('#temp-productos')
 const lsProduct = temp.content.querySelector('#tr-list')
 
-productos.forEach((elem) => {
-    
+
+const listaProductos = () => {
+  productos.forEach((elem) => {
     let prodClone = lsProduct.cloneNode(lsProduct,true);
     prodClone.children[0].innerText = elem.id
     prodClone.children[1].innerText = elem.tipo
@@ -21,32 +29,19 @@ productos.forEach((elem) => {
     //evento para eliminar el producto
     btn.addEventListener('click', () => {
         //sweetAlert
-        Swal.fire({
-            title: '¿Desea eliminar el producto?',
-            showDenyButton: true,
-            showCancelButton: true,
-            confirmButtonText: 'Eliminar',
-            denyButtonText: `Volver`,
-          }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
-            if (result.isConfirmed) {
-              const index = productos.findIndex(item => item.id == elem.id);
-              const parent = btn.parentNode.parentNode
-            
-              productos.splice(index,1)
-              parent.parentNode.removeChild(parent)
-              localStorage.setItem('productos',JSON.stringify(productos))
-
-              Swal.fire('¡Producto Eliminado!', '', 'success')
-
-            } else if (result.isDenied) {
-              Swal.fire('No se elimino el producto', '', 'info')
-            }
-        })
+        alertEliminarConfirm('producto',eliminarProducto)
     })
 
     divLista.appendChild(prodClone)
-});
+  });
+}
 
 
-
+const eliminarProducto = () => {
+  const index = productos.findIndex(item => item.id == elem.id);
+  const parent = btn.parentNode.parentNode
+            
+  productos.splice(index,1)
+  parent.parentNode.removeChild(parent)
+  localStorage.setItem('productos',JSON.stringify(productos))
+}
