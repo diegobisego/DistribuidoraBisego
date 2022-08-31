@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background: linear-gradient(to left, #CCCCCC 0%, #666666 100%);
+}
+
+.btn-admin {
+    margin: 10px 0;
+}
+
+.menu {
+    font-family: 'Aboreto', cursive;
+    color: white;
+}
+
+div a button {
+    width: 300px;
+}
+
+
