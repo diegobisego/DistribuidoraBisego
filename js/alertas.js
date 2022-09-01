@@ -58,3 +58,15 @@ const alertCarga = (tipo,param) => {
       toast: true
     })
   }
+
+
+  const registroInvalido = () => {
+    Swal.fire({
+      position: 'top',
+      icon: 'error',
+      title: `El Uusario ya se cuentra registrado`,
+      showConfirmButton: false,
+      timer: 2000,
+      toast: true
+    })
+  }

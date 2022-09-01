@@ -27,7 +27,6 @@ btnIngresar.addEventListener('click', () => {
 
     for (const key in usuarios) {
         if (usuarios[key].nombreUsuario == usuario && usuarios[key].password == password) {
-            // putLogin(usuario)
             localStorage.setItem('user',usuarios[key].nombreUsuario)
             window.location.href = "../wcLogin.html"
         } else {
