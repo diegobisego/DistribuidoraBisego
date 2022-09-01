@@ -1,22 +1,5 @@
 {
-  "productos": [
-    {
-      "id": 1,
-      "tipo": "Aceite Comestible",
-      "tamanio": 5,
-      "um": "L",
-      "precio": 1200,
-      "stock": 5000
-    },
-    {
-      "id": 2,
-      "tipo": "Aceitunas",
-      "tamanio": 5,
-      "um": "Kg",
-      "precio": 2000,
-      "stock": 5000
-    }
-  ],
+  "productos": [],
   "clientes": [
     {
       "id": "1",
@@ -26,26 +9,6 @@
       "domicilio": "Carlos Pellegrini 927",
       "Ciudad": "Villa Maria",
       "email": "diegobisego@gmail.com",
-      "tipoPago": "Contado Efectivo"
-    },
-    {
-      "id": "XXGMowo",
-      "nombre": "Telma Cordoba",
-      "dniCuit": "213213",
-      "telefono": "123213",
-      "domicilio": "Pellegrini 342",
-      "Ciudad": "undefined",
-      "email": "diegobisego@gmail.com",
-      "tipoPago": "Transferencia"
-    },
-    {
-      "id": "A_qmZ1Z",
-      "nombre": "",
-      "dniCuit": "",
-      "telefono": "",
-      "domicilio": "",
-      "Ciudad": "0",
-      "email": "",
       "tipoPago": "Contado Efectivo"
     }
   ],

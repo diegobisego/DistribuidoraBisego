@@ -56,14 +56,14 @@ idUM.addEventListener('change', (event) => {
 
 //evento de boton
 boton.addEventListener('click', () => { 
-  
+  debugger
   //Verifico si el array esta vacio, se llena
-  if (productos == "") {
+  if (productos.length == 0) {
     contadorId = 1;
     PostProducto(contadorId,tipoProducto,tipoTamPeso,precio,stock)
     return 
   }
-  
+  console.log(productos.length)
   //verifico que no cargue 2 veces el mismo producto  
   for (const key in productos) {
     if (productos[key].tipo == tipoProducto.value && productos[key].tamanio == tipoTamPeso.value) {
@@ -82,7 +82,7 @@ boton.addEventListener('click', () => {
 
 
 
-const PostProducto = (contador,tipoProducto,tipoTamPeso,precio,stock) => {
+const PostProducto = (contadorId,tipoProducto,tipoTamPeso,precio,stock) => {
 
   fetch('http://localhost:5000/Productos', {
   method: 'POST',
@@ -90,7 +90,7 @@ const PostProducto = (contador,tipoProducto,tipoTamPeso,precio,stock) => {
     'content-type': 'application/json; charset=UTF-8',
   },
     body: JSON.stringify({
-    id: contador,
+    id: contadorId,
     tipo: tipoProducto.value,
     tamanio: Number(tipoTamPeso.value),
     um: UM,

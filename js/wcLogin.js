@@ -1,26 +1,10 @@
-let usuarios = []
-
-//Metodo GET para FETCH de usuarios, para luego comparar contenido
-fetch('http://localhost:5000/userLogin')
-  .then((res) => res.json())
-  .then((data) => {
-    usuarios.push(...data)
-    userLogin(usuarios)
-    setTimeout((bienvenida) => {
-      window.location.href = "../panelAdmin.html"
-    }, 1500);
-
-});
-
-const userLogin = (usuarios) => {
-const user = document.querySelector('#user');
-for (const key in usuarios) {
-    user.innerText = ' ' + usuarios[key].user
-  }
-}
+let usuario = localStorage.getItem('user')
 
 const bienvenida = () => {
   
+  const user = document.querySelector('#user');
+  user.innerText = ' ' + usuario  
+
   const textWrapper = document.querySelector('.ml14 .letters');
   textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
   
@@ -48,10 +32,13 @@ const bienvenida = () => {
       easing: "easeOutExpo",
       delay: 1000
     });
+    setTimeout(() => {
+      window.location.href = "../panelAdmin.html"
+    }, 3000); 
 }
 
+bienvenida()
 
- /************************** GET DE USUARIO ***************************** */
 
 
 

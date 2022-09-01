@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 input::-webkit-outer-spin-button,
@@ -11,7 +12,12 @@ input::-webkit-inner-spin-button {
 }
 
 body {
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#mainProductos {
+    height: auto;
 }
 
 /******** BOTONES NAV **********/

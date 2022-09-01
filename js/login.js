@@ -1,5 +1,3 @@
-
-
 //evito el reinicio de la pagina
 const form = document.querySelector('#form');
 form.addEventListener('submit', (e) =>{
@@ -24,13 +22,13 @@ fetch('http://localhost:5000/usuarios')
 const btnIngresar = document.querySelector('#btnIngresar');
 
 btnIngresar.addEventListener('click', () => {
-debugger
     const usuario = document.querySelector('#usuario').value
     const password = document.querySelector('#password').value
 
     for (const key in usuarios) {
         if (usuarios[key].nombreUsuario == usuario && usuarios[key].password == password) {
             // putLogin(usuario)
+            localStorage.setItem('user',usuarios[key].nombreUsuario)
             window.location.href = "../wcLogin.html"
         } else {
             alertLoginInvalido()
@@ -51,3 +49,17 @@ const putLogin = (user) => {
         })
 }
 // window.location.href = "https://professor-falken.com";
+
+
+
+
+
+  /************************** REGISTRO ***************************** */
+
+
+// const btnRegistrar = document.querySelector('#btnRegistrar')
+
+// btnRegistrar.addEventListener('click', () => {
+  
+// })
+

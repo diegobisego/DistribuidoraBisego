@@ -23,3 +23,12 @@ body {
     width:340px;  
     height: auto;
 }
+
+#divRegistro {
+    display: flex;
+}
+
+#divRegistro a {
+    margin-left: 10px;
+}
+

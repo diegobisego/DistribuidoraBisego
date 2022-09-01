@@ -26,13 +26,44 @@ const listaProductos = () => {
     prodClone.children[4].innerText = elem.stock 
     
     let btnEliminar = prodClone.querySelector("#btnEliminar"); 
-    let btnEditar = prodClone.querySelector('#btnEditar');   
+    let btnEditar = prodClone.querySelector('#btnEditar');
+
 
     divLista.appendChild(prodClone)
+
+
     //evento para eliminar el producto
     btnEliminar.addEventListener('click', () => {
-      //sweetAlert (esta dentro de Alert.js)
-      alertEliminarConfirm('producto',eliminarProducto)
+      //sweetAlert 
+      Swal.fire({
+        title: '¿Desea eliminar el producto?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Eliminar',
+        denyButtonText: `Volver`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+
+          // const index = productos.findIndex(item => item.id == elem.id);
+          const parent = btnEliminar.parentNode.parentNode
+          // productos.splice(index,1)
+          parent.parentNode.removeChild(parent)
+
+
+          id = elem.id
+          fetch(`http://localhost:5000/productos/${id}`, 
+          { method: 'DELETE' })
+          .then(() => {
+            Swal.fire(`Se elimino el producto en forma correcta`, '', 'success')
+          })
+          
+
+
+          
+        } else if (result.isDenied) {
+          Swal.fire(`No se elimino el ${param}`, '', 'info')
+        }
+    })
     })
 
     //Boton Editar
@@ -61,18 +92,7 @@ const listaProductos = () => {
   })
 }
 
-/************************** ELIMINAR PRODUCTOS ***************************** */
-
-const eliminarProducto = () => {
-  const index = productos.findIndex(item => item.id == elem.id);
-  const parent = btn.parentNode.parentNode
-            
-  productos.splice(index,1)
-  parent.parentNode.removeChild(parent)
-  localStorage.setItem('productos',JSON.stringify(productos))
-
-}
+/************************** ELIMINAR PRODUCTOS FETCH ***************************** */
 
 
-const editarProducto = () => {
-}
+
