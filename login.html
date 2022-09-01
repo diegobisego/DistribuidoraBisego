@@ -31,7 +31,10 @@
         <hr>
         <div class="mb-3 form-check">
           <label class="form-check-label" for="exampleCheck1">Sin usuario? Click</label>
-          <button class="bttn-unite bttn-xs bttn-warning" id="btnRegistrar" type="button">AQUI</button>
+                <!-- Button trigger modal -->
+          <button type="button" class="bttn-unite bttn-xs bttn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            AQUI
+          </button>
         </div>
         <hr>
         <div class="d-flex justify-content-center">
@@ -39,6 +42,34 @@
         </div>
         <img src="./img/Logo Bisego Transparente.png" alt="logo" id="logo">
       </form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="divRegistroUusuario">
+        <label for=""> Usuario</label>
+        <div>
+          <input type="text" name="" id="regUser" class="form-control">
+        </div>
+        <label for=""> Contraseña
+          <div>
+            <input type="text" name="" id="regPass" class="form-control">
+          </div>
+        </label>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="bttn-slant bttn-md bttn-success" id="btnRegistrar">Registrar</button>
+        <button type="button" class="bttn-slant bttn-md bttn-danger" id="btnCancelar" data-bs-dismiss="modal"> Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         <!-- bootstrap -->

@@ -48,18 +48,4 @@ const putLogin = (user) => {
           })
         })
 }
-// window.location.href = "https://professor-falken.com";
-
-
-
-
-
-  /************************** REGISTRO ***************************** */
-
-
-// const btnRegistrar = document.querySelector('#btnRegistrar')
-
-// btnRegistrar.addEventListener('click', () => {
-  
-// })
 
