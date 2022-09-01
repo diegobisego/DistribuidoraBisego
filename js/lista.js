@@ -17,6 +17,7 @@ const lsProduct = temp.content.querySelector('#tr-list')
 
 const listaProductos = () => {
   productos.forEach((elem) => {
+    
     let prodClone = lsProduct.cloneNode(lsProduct,true);
     prodClone.children[0].innerText = elem.id
     prodClone.children[1].innerText = elem.tipo
@@ -27,6 +28,7 @@ const listaProductos = () => {
     let btnEliminar = prodClone.querySelector("#btnEliminar"); 
     let btnEditar = prodClone.querySelector('#btnEditar');   
 
+    divLista.appendChild(prodClone)
     //evento para eliminar el producto
     btnEliminar.addEventListener('click', () => {
       //sweetAlert (esta dentro de Alert.js)
@@ -35,20 +37,29 @@ const listaProductos = () => {
 
     //Boton Editar
     btnEditar.addEventListener('click', () => {
-      
-     const inEditarPrecio = document.querySelector('#inEditarPrecio')
-     const inEditarStock = document.querySelector('#inEditarStock')
+      const inEditarPrecio = document.querySelector('#inEditarPrecio')
+      const inEditarStock = document.querySelector('#inEditarStock')
+      const id = elem.id;
 
-     inEditarPrecio.value = Number(elem.precio);
-     inEditarStock.value = Number(elem.stock);
+      inEditarPrecio.value = Number(elem.precio);
+      inEditarStock.value = Number(elem.stock);  
+     
+      const btnConfirmarEdicion = document.querySelector('#btnConfirmarEdicion');
 
-    // editarProducto();
+      btnConfirmarEdicion.addEventListener('click', () => {
+        fetch(`http://localhost:5000/Productos/${id}`, {
+          method: 'PATCH',
+          headers: {
+            'content-type': 'application/json; charset=UTF-8',
+          },
+            precio: Number(inEditarPrecio.value),
+            stock: Number(inEditarStock.value)
+            })
+          })
     })
 
-    divLista.appendChild(prodClone)
   })
 }
-
 
 /************************** ELIMINAR PRODUCTOS ***************************** */
 
@@ -59,6 +70,7 @@ const eliminarProducto = () => {
   productos.splice(index,1)
   parent.parentNode.removeChild(parent)
   localStorage.setItem('productos',JSON.stringify(productos))
+
 }
 
 

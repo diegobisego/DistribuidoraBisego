@@ -7,6 +7,14 @@
       "um": "L",
       "precio": 1200,
       "stock": 5000
+    },
+    {
+      "id": 2,
+      "tipo": "Aceitunas",
+      "tamanio": 5,
+      "um": "Kg",
+      "precio": 2000,
+      "stock": 5000
     }
   ],
   "clientes": [
@@ -44,8 +52,13 @@
   "usuarios": [
     {
       "nombreUsuario": "Grunklen",
-      "password": "123456",
-      "email": "diegobisego@gmail.com"
+      "password": "123456"
+    }
+  ],
+  "userLogin": [
+    {
+      "user": "Grunklen",
+      "id": "1"
     }
   ],
   "ventas": [
