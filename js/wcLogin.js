@@ -8,7 +8,7 @@ fetch('http://localhost:5000/userLogin')
     userLogin(usuarios)
     setTimeout((bienvenida) => {
       window.location.href = "../panelAdmin.html"
-    }, 3000);
+    }, 1500);
 
 });
 
@@ -21,8 +21,7 @@ for (const key in usuarios) {
 
 const bienvenida = () => {
   
-  // Wrap every letter in a span
-  var textWrapper = document.querySelector('.ml14 .letters');
+  const textWrapper = document.querySelector('.ml14 .letters');
   textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
   
   anime.timeline({loop: false})

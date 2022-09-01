@@ -30,10 +30,11 @@ debugger
 
     for (const key in usuarios) {
         if (usuarios[key].nombreUsuario == usuario && usuarios[key].password == password) {
-            putLogin(usuario)
+            // putLogin(usuario)
             window.location.href = "../wcLogin.html"
         } else {
-            null
+            alertLoginInvalido()
+            form.reset()
         }           
     }
 })

@@ -46,3 +46,15 @@ const alertCarga = (tipo,param) => {
       }
   })
   }
+
+
+  const alertLoginInvalido = () => {
+    Swal.fire({
+      position: 'top',
+      icon: 'error',
+      title: `El Uusario no se cuentra registrado`,
+      showConfirmButton: false,
+      timer: 2000,
+      toast: true
+    })
+  }
