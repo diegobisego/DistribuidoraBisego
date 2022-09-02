@@ -24,16 +24,18 @@ const btnIngresar = document.querySelector('#btnIngresar');
 btnIngresar.addEventListener('click', () => {
     const usuario = document.querySelector('#usuario').value
     const password = document.querySelector('#password').value
+    debugger
+    const existe = usuarios.some( user => (user.nombreUsuario == usuario && user.password == password))
 
-    for (const key in usuarios) {
-        if (usuarios[key].nombreUsuario == usuario && usuarios[key].password == password) {
-            localStorage.setItem('user',usuarios[key].nombreUsuario)
-            window.location.href = "../wcLogin.html"
-        } else {
-            alertLoginInvalido()
-            form.reset()
-        }           
-    }
+    if (existe) {
+      localStorage.setItem('user',usuario)
+      window.location.href = "../wcLogin.html"
+      return
+    } else {
+      alertLoginInvalido()
+      form.reset() 
+    }       
+  
 })
 
 const putLogin = (user) => {

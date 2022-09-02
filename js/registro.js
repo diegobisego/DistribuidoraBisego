@@ -20,26 +20,28 @@ btnRegistrar.addEventListener('click', () => {
     const regUser = document.querySelector('#regUser').value;
     const regPass = document.querySelector('#regPass').value;
 
-    for (const key in usuariosRegistrados) {
-        if (usuariosRegistrados[key].nombreUsuario == regUser) {
-            registroInvalido()
-            break
-        } else {
-            fetch('http://localhost:5000/Usuarios', {
-                method: 'POST',
-                headers: {
-                  'content-type': 'application/json; charset=UTF-8',
-                },
-                  body: JSON.stringify({
-                  nombreUsuario: regUser,
-                  password: regPass
-                  })
-                }).then(
-                    alertCarga(1,'usuario')
-                )
-        }
+    const existe = usuariosRegistrados.some( user => user.nombreUsuario == regUser)
+  
+    
+    if (existe) {
+      registroInvalido()
+    } else {
+      const idRegistro = Number(usuariosRegistrados.length + 1)
+      fetch('http://localhost:5000/Usuarios', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json; charset=UTF-8',
+          },
+            body: JSON.stringify({
+            id:idRegistro,
+            nombreUsuario: regUser,
+            password: regPass
+            })
+          }).then(
+              alertCarga(1,'usuario')
+          )
+  
+   
     }
-
-
 
 })

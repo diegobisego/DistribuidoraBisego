@@ -14,7 +14,13 @@
   ],
   "usuarios": [
     {
+      "id": "1",
       "nombreUsuario": "Grunklen",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "nombreUsuario": "Diego",
       "password": "123456"
     }
   ],
