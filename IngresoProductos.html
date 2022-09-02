@@ -52,7 +52,7 @@
                 <form action="" id="form">
                     <div class="mb-3" id="form-items">
                         <label for="exampleInputEmail1" class="form-label mt-3">Tipo
-                          <input type="text" class="form-control mt-2 text-center" id="inTipo" aria-describedby="tipo">
+                          <input type="text" class="form-control mt-2 text-center" id="inTipo" aria-describedby="tipo" onkeypress="return soloLetras(event)">
                         </label>
                         <div>
                           <label for="exampleInputEmail1" class="form-label mt-3">Cantidad
@@ -86,6 +86,7 @@
     <script src="./js/alertas.js"></script>
     <script src="./js/Clases/producto.js"></script>
     <script src="./js/darkMode/darkMode.js"></script>
+    <script src="./js/fnAdicionales.js"></script>
 </body>
 </html>
 

@@ -14,7 +14,8 @@ const alertCarga = (tipo,param) => {
         icon: 'error',
         title: `El ${param} ya existe`,
         showConfirmButton: false,
-        timer: 2000
+        timer: 2000,
+        toast:true
       })
     }
   }
@@ -100,6 +101,16 @@ const alertCarga = (tipo,param) => {
           toast: true
         })
     break
+    case 6:
+      Swal.fire({
+        position: 'top',
+        icon: 'error',
+        title: `Se deben completar todos los campos`,
+        showConfirmButton: false,
+        timer: 3000,
+        toast: true
+      })
+  break
       default:
         break;
     }

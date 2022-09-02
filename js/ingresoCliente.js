@@ -78,6 +78,12 @@ const labelChecked = document.getElementsByName('labelTipoPago')
 //boton cargar
 btnCargaClientes.addEventListener('click', () => {
 
+
+  //validacion de campos
+  if (inNombreCliente.value == '' || inDniCuitCliente.value == '' || inTelefonoCliente.value == '' || inDomicilioCliente.value == '' || inEmailCliente.value == '') {
+    invalido(6)
+  }
+
   let selecTipoPago;
 
   //verifico radio chequeado y lo paso como texto
