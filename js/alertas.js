@@ -48,15 +48,31 @@ const alertCarga = (tipo,param) => {
   }
 
 
-  const alertLoginInvalido = () => {
-    Swal.fire({
-      position: 'top',
-      icon: 'error',
-      title: `El Uusario no se cuentra registrado`,
-      showConfirmButton: false,
-      timer: 2000,
-      toast: true
-    })
+  const alertLoginInvalido = (tipo) => {
+    switch (tipo) {
+      case 1:
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: `El Usario no se encuentra registrado`,
+          showConfirmButton: false,
+          timer: 2000,
+          toast: true
+        })          
+        break;
+      case 2:
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: `La contraseña es invalida`,
+          showConfirmButton: false,
+          timer: 2000,
+          toast: true
+        })   
+        break  
+      default:
+        break;
+    }
   }
 
 

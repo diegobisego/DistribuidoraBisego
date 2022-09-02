@@ -24,29 +24,36 @@ const btnIngresar = document.querySelector('#btnIngresar');
 btnIngresar.addEventListener('click', () => {
     const usuario = document.querySelector('#usuario').value
     const password = document.querySelector('#password').value
-    debugger
+    
     const existe = usuarios.some( user => (user.nombreUsuario == usuario && user.password == password))
+    const existeUser = usuarios.some( user => user.nombreUsuario == usuario)
 
     if (existe) {
       localStorage.setItem('user',usuario)
       window.location.href = "../wcLogin.html"
       return
-    } else {
-      alertLoginInvalido()
+    } else if (!existeUser){
+      //en alertas.js
+      alertLoginInvalido(1)
       form.reset() 
+    } else {
+      alertLoginInvalido(2)
+      form.reset()
     }       
   
 })
 
-const putLogin = (user) => {
-    fetch('http://localhost:5000/userLogin/1', {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json; charset=UTF-8',
-        },
-          body: JSON.stringify({
-          user: user,
-          })
-        })
-}
+
+
+// const putLogin = (user) => {
+//     fetch('http://localhost:5000/userLogin/1', {
+//         method: 'PUT',
+//         headers: {
+//           'content-type': 'application/json; charset=UTF-8',
+//         },
+//           body: JSON.stringify({
+//           user: user,
+//           })
+//         })
+// }
 
