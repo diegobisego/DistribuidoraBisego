@@ -47,8 +47,8 @@ const alertCarga = (tipo,param) => {
   })
   }
 
-
-  const alertLoginInvalido = (tipo) => {
+//validaciones de ingresos usuarios invalidos
+  const invalido = (tipo) => {
     switch (tipo) {
       case 1:
         Swal.fire({
@@ -69,20 +69,38 @@ const alertCarga = (tipo,param) => {
           timer: 2000,
           toast: true
         })   
-        break  
+        break 
+      case 3:
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: `El Usuario ya se ecuentra registrado`,
+          showConfirmButton: false,
+          timer: 3000,
+          toast: true
+        })
+        case 4:
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: `El usuario no puede estar vacio ni contener espacios`,
+            showConfirmButton: false,
+            timer: 3000,
+            toast: true
+          })
+      break
+      case 5:
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: `El usuario o contraseña debe contener 4 letras como minimo`,
+          showConfirmButton: false,
+          timer: 3000,
+          toast: true
+        })
+    break
       default:
         break;
     }
   }
 
-
-  const registroInvalido = () => {
-    Swal.fire({
-      position: 'top',
-      icon: 'error',
-      title: `El Uusario ya se cuentra registrado`,
-      showConfirmButton: false,
-      timer: 2000,
-      toast: true
-    })
-  }
