@@ -12,7 +12,7 @@ const idCiudad = document.querySelector('#selCiudadCliente')
 
 
 for (const i of ciudades) {
-  debugger
+  
   const option = document.createElement('option');
   idCiudad.appendChild(option)
   option.innerHTML = i
@@ -61,7 +61,7 @@ tipoPagoArr.forEach((elem, index) => {
 
 
 /************************** FETCH CLIENTES ***************************** */
-debugger
+
 const inNombreCliente = document.querySelector('#inNombreCliente');
 const inDniCuitCliente = document.querySelector('#inDniCuitCliente');
 const inTelefonoCliente = document.querySelector('#inTelefonoCliente');
@@ -76,7 +76,7 @@ const labelChecked = document.getElementsByName('labelTipoPago')
 
 
 btnCargaClientes.addEventListener('click', () => {
-  
+
   let selecTipoPago;
 
   for (var i = 0; i < RadioTipoPago.length; i++) {
@@ -93,10 +93,6 @@ btnCargaClientes.addEventListener('click', () => {
       return
     }
   }
-
-  
-  console.log(selDomicilioCliente.value)
-  console.log(selDomicilioCliente.selected)
 
   contadorId = clientes.length + 1
   postClientes(contadorId, inNombreCliente.value, inDniCuitCliente.value, inTelefonoCliente.value, inDomicilioCliente.value, selCiudadCliente.value, inEmailCliente.value, selecTipoPago)
