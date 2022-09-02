@@ -12,7 +12,7 @@ const idCiudad = document.querySelector('#selCiudadCliente')
 
 
 for (const i of ciudades) {
-  
+
   const option = document.createElement('option');
   idCiudad.appendChild(option)
   option.innerHTML = i
@@ -60,12 +60,14 @@ tipoPagoArr.forEach((elem, index) => {
 })
 
 
-/************************** FETCH CLIENTES ***************************** */
+/************************** POST CLIENTES ***************************** */
 
+
+//constantes de formulario
 const inNombreCliente = document.querySelector('#inNombreCliente');
 const inDniCuitCliente = document.querySelector('#inDniCuitCliente');
 const inTelefonoCliente = document.querySelector('#inTelefonoCliente');
-const inDomicilioCliente = document.querySelector('#inCiudadCliente');
+const inDomicilioCliente = document.querySelector('#inDomicilioCliente');
 const selCiudadCliente = document.querySelector('#selCiudadCliente');
 const inEmailCliente = document.querySelector('#inEmailCliente');
 const btnCargaClientes = document.querySelector('#btnCargaClientes');
@@ -73,12 +75,12 @@ const RadioTipoPago = document.getElementsByName('RadioTipoPago')
 const labelChecked = document.getElementsByName('labelTipoPago')
 
 
-
-
+//boton cargar
 btnCargaClientes.addEventListener('click', () => {
 
   let selecTipoPago;
 
+  //verifico radio chequeado y lo paso como texto
   for (var i = 0; i < RadioTipoPago.length; i++) {
     if (RadioTipoPago[i].checked) {
       selecTipoPago = labelChecked[i].innerHTML
@@ -90,17 +92,20 @@ btnCargaClientes.addEventListener('click', () => {
   for (const key in clientes) {
     if (clientes[key].dniCuit == inDniCuitCliente.value) {
       alertCarga(2, 'cliente')
+      form.reset()
       return
     }
   }
 
+  //contador y ejecucion de POST
   contadorId = clientes.length + 1
   postClientes(contadorId, inNombreCliente.value, inDniCuitCliente.value, inTelefonoCliente.value, inDomicilioCliente.value, selCiudadCliente.value, inEmailCliente.value, selecTipoPago)
 })
 
 
+//funcion POST
 const postClientes = (contadorId, inNombreCliente, inDniCuitCliente, inTelefonoCliente, inDomicilioCliente, selCiudadCliente, inEmailCliente, selecTipoPago) => {
-  
+
   setTimeout(() => {
     fetch('http://localhost:5000/clientes', {
       method: 'POST',

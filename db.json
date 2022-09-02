@@ -67,6 +67,26 @@
       "Ciudad": "Villa Maria",
       "email": "diegobisego@gmail.com",
       "tipoPago": "Contado Efectivo"
+    },
+    {
+      "id": 2,
+      "nombre": "Jorge Perez",
+      "dniCuit": "345345345",
+      "telefono": "4354353",
+      "domicilio": "Pellegrini 342",
+      "Ciudad": "Villa Maria",
+      "email": "diegobisego@gmail.com",
+      "tipoPago": "Transferencia"
+    },
+    {
+      "id": 3,
+      "nombre": "Telma Cordoba",
+      "dniCuit": "34535345",
+      "telefono": "345345",
+      "domicilio": "Pellegrini 342",
+      "Ciudad": "Villa Maria",
+      "email": "diegobisego@gmail.com",
+      "tipoPago": "Contado Efectivo"
     }
   ],
   "usuarios": [
