@@ -65,10 +65,16 @@ const listaProductos = () => {
 
     //Boton Editar
     btnEditar.addEventListener('click', () => {
+      const inEditarTipo = document.querySelector('#inEditarTipo');
+      const inEditarTamanio = document.querySelector('#inEditarTamanio');
+      const idEditarUM = document.querySelector('#idEditarUM');
       const inEditarPrecio = document.querySelector('#inEditarPrecio')
       const inEditarStock = document.querySelector('#inEditarStock')
       const id = elem.id;
-
+      
+      inEditarTipo.value = elem.tipo;
+      inEditarTamanio.value = Number(elem.tamanio);
+      idEditarUM.value = elem.um;
       inEditarPrecio.value = Number(elem.precio);
       inEditarStock.value = Number(elem.stock);
 
@@ -89,7 +95,17 @@ const listaProductos = () => {
   })
 }
 
+//Carga el select tamaño/peso de productos desd el array
+let tamTipo = ['','G','Kg','L','Medianos','Grandes Color','Grandes Blancos'];
+const idEditarUM = document.querySelector('#idEditarUM')
 
+
+for (const i of tamTipo) {
+  const option = document.createElement('option');
+  idEditarUM.appendChild(option)
+  option.innerHTML = i
+  option.setAttribute('value',i)
+}
 
 
 
