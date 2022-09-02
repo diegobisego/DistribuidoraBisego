@@ -17,38 +17,6 @@
       "stock": 5600
     },
     {
-      "id": 3,
-      "tipo": "Vinagre",
-      "tamanio": 5,
-      "um": "L",
-      "precio": 2500,
-      "stock": 10000
-    },
-    {
-      "id": 4,
-      "tipo": "Huevos",
-      "tamanio": 1,
-      "um": "Grandes Color",
-      "precio": 2500,
-      "stock": 3000
-    },
-    {
-      "id": 5,
-      "tipo": "Aceitunas",
-      "tamanio": 2,
-      "um": "Kg",
-      "precio": 800,
-      "stock": 5000
-    },
-    {
-      "id": 6,
-      "tipo": "Pimientos",
-      "tamanio": 800,
-      "um": "G",
-      "precio": 1200,
-      "stock": 8900
-    },
-    {
       "id": 7,
       "tipo": "Ajies",
       "tamanio": 800,
