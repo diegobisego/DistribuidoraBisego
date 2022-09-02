@@ -23,11 +23,13 @@ const btnIngresar = document.querySelector('#btnIngresar');
 
 btnIngresar.addEventListener('click', () => {
   
-    const usuario = document.querySelector('#usuario').value
+    let usuario = document.querySelector('#usuario').value
     const password = document.querySelector('#password').value  
+
+    usuario = usuario.toLowerCase();
     
-    const existe = usuarios.some( user => (user.nombreUsuario == usuario && user.password == password))
-    const existeUser = usuarios.some( user => user.nombreUsuario == usuario)
+    const existe = usuarios.some( user => (user.nombreUsuario.toLowerCase() == usuario && user.password == password))
+    const existeUser = usuarios.some( user => user.nombreUsuario.toLowerCase() == usuario)
 
     if (existe) {
       localStorage.setItem('user',usuario)

@@ -16,11 +16,11 @@ body {
     justify-content: center;
     align-items: center;
     padding: 50px 30px;
-    background-color: rgb(239, 235, 230);    
+    background-color: rgb(239, 235, 230);
 }
 
 #logo {
-    width:340px;  
+    width: 340px;
     height: auto;
 }
 
@@ -38,10 +38,11 @@ body {
     margin-bottom: 10px;
 }
 
-#btnRegistrar, #btnCancelar{
+#btnRegistrar,
+#btnCancelar {
     margin-right: 20px;
 }
 
-#usuario {
+#usuario, #password, #regUser, #regPass {
     text-align: center;
 }

@@ -1,5 +1,11 @@
 let usuario = localStorage.getItem('user')
 
+usuario = usuario.split(',').forEach((elem) => {
+  if (usuario[elem] == 0) usuario[elem].toUpperCase()  
+}).concat(',')
+
+console.log(usuario)
+
 const bienvenida = () => {
   
   const user = document.querySelector('#user');
