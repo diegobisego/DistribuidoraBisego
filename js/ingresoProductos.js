@@ -83,7 +83,7 @@ boton.addEventListener('click', () => {
 
 
 const PostProducto = (contadorId,tipoProducto,tipoTamPeso,precio,stock) => {
-
+setTimeout(() => {
   fetch('http://localhost:5000/Productos', {
   method: 'POST',
   headers: {
@@ -98,6 +98,10 @@ const PostProducto = (contadorId,tipoProducto,tipoTamPeso,precio,stock) => {
     stock: Number(stock.value)
     })
   })
+  
+}, 800);
+  alertCarga(1,'producto')
+
 }
 
 

@@ -32,6 +32,7 @@ btnIngresar.addEventListener('click', () => {
     const existeUser = usuarios.some( user => user.nombreUsuario.toLowerCase() == usuario)
 
     if (existe) {
+      usuario = usuario.charAt(0).toUpperCase() + usuario.slice(1);
       localStorage.setItem('user',usuario)
       window.location.href = "../wcLogin.html"
       return

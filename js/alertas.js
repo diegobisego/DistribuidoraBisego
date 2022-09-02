@@ -1,11 +1,12 @@
 const alertCarga = (tipo,param) => {
     if (tipo == 1) {
       Swal.fire({
-        position: 'center',
+        position: 'top',
         icon: 'success',
         title: `${param} fue cargado con Exito!`,
         showConfirmButton: false,
-        timer: 1000
+        timer: 1000,
+        toast:true
       })
     } else {
       Swal.fire({
