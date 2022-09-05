@@ -35,6 +35,19 @@ const opCliente = document.querySelector('#opCliente')
 const opTipoPago = document.querySelector('#opTipoPago')
  
 
+/************* FECHA ACTUAL ******************/ 
+
+window.onload = function(){
+  var fecha = new Date(); //Fecha actual
+  var mes = fecha.getMonth()+1; //obteniendo mes
+  var dia = fecha.getDate(); //obteniendo dia
+  var ano = fecha.getFullYear(); //obteniendo año
+  if(dia<10)
+    dia='0'+dia; //agrega cero si el menor de 10
+  if(mes<10)
+    mes='0'+mes //agrega cero si el menor de 10
+  document.getElementById('inDate').value=ano+"-"+mes+"-"+dia;
+}
 
 /************* SE CARGAN POR FETCH LOS PRODUCTOS ACTIVOS EN EL SISTEMA ******************/ 
 
@@ -112,7 +125,7 @@ opCliente.addEventListener('change', () => {
   const seleccion = opCliente.options[opCliente.selectedIndex].text;
   
   clientes.find((element,index) => {
-    debugger
+    
       if (element.nombre == seleccion) {
         
         // opTipoPago.options[opTipoPago.selectedIndex ].find()
@@ -134,6 +147,11 @@ btnagregarListaVenta.addEventListener('click', () => {
   const precio = Number(precioUnitario.value);
   contador++
 
+  if (producto == '' || cant == '' || precio == '') {
+    invalido(6)
+    return;
+  }
+
   const prodClone = trTemp.cloneNode(trTemp,true)
   prodClone.children[0].innerText = contador
   prodClone.children[1].innerText = producto
@@ -142,15 +160,14 @@ btnagregarListaVenta.addEventListener('click', () => {
 
   total += precio * cant
 
-  //evento para eliminar el producto
+
   const nuevoProdcuto = new ProductoVenta(contador,producto,cant,precio)
   listaProducto.push(nuevoProdcuto)
 
   let btn = prodClone.querySelector("#btnEliminar");    
 
-    //evento para eliminar el producto
+  //evento para eliminar el producto
   btn.addEventListener('click', () => {
-      //sweetAlert
       const index = listaProducto.findIndex(item => item.id == contador);
       const parent = btn.parentNode.parentNode
       total  -= precio * cant
@@ -159,8 +176,11 @@ btnagregarListaVenta.addEventListener('click', () => {
       listaProducto.splice(index,1)
       parent.parentNode.removeChild(parent)
 
+      //en alertas.js
       alertEliminar('producto')
       })
+
+     
 
   tVentas.appendChild(prodClone)
   idTotalVenta.innerHTML = total
@@ -178,30 +198,33 @@ fetch('http://localhost:5000/ventas')
     ventas.push(...data);
 });
 
-const btnFinalizarVenta = document.querySelector('#btnFinalizarVenta');
 
-const finalizarVenta = () => {
+ //finaliza la compra
+ const btnFinalizarVenta = document.querySelector('#btnFinalizarVenta');
 
-  btnFinalizarVenta.addEventListener('click', () => {
-    setTimeout(() => {      
-      fetch('http://localhost:5000/Ventas', {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json; charset=UTF-8',
-        },
-        body: JSON.stringify({
-          id:ventas.length + 1,
-          fecha: inDate.value,
-          nroFactura: inNroFactura.value,
-          Cliente: opCliente.value,
-          tipoPago: opTipoPago.value,
-          montoTotal: Number(total)
-        })
-      })  
-    }, 1500)
-    alertCarga(3, 'venta')
-  })
-}
+ btnFinalizarVenta.addEventListener('click', () =>  {
+   debugger
+   const tieneHijos = document.querySelector('#tVentas').childElementCount
 
-
-finalizarVenta()
+   if (inDate.value == '' || opCliente.value == 'Seleccione un cliente' || opTipoPago.value == 'Seleccione un tipo' || tieneHijos == 1) {
+     invalido(6)
+     return;
+   }
+   setTimeout(() => {      
+     fetch('http://localhost:5000/Ventas', {
+       method: 'POST',
+       headers: {
+         'content-type': 'application/json; charset=UTF-8',
+       },
+       body: JSON.stringify({
+         id:ventas.length + 1,
+         fecha: inDate.value,
+         nroFactura: inNroFactura.value,
+         Cliente: opCliente.value,
+         tipoPago: opTipoPago.value,
+         montoTotal: Number(total)
+       })
+     })  
+   }, 1500)
+   alertCarga(3, 'venta')
+ })

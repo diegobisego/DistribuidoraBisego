@@ -94,6 +94,14 @@
       "Cliente": "Telma Cordoba",
       "tipoPago": "Contado Efectivo",
       "montoTotal": 9000
+    },
+    {
+      "id": 4,
+      "fecha": "2022-09-05",
+      "nroFactura": "",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2000
     }
   ]
 }
