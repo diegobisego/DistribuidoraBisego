@@ -191,3 +191,14 @@ body {
     width: 40vw;
 }
 
+
+/*************** CUENTAS CORRIENTES ******************/
+
+#mainCuentasCorrientes {
+    
+}
+
+#titleCuentasCorrientes {
+    display: flex;
+    justify-content: center;
+}
