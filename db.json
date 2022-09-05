@@ -71,6 +71,29 @@
     }
   ],
   "ventas": [
-    {}
+    {
+      "id": 1,
+      "fecha": "2022-09-05",
+      "nroFactura": "1231321",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Transferencia",
+      "montoTotal": 2000
+    },
+    {
+      "id": 2,
+      "fecha": "2022-09-05",
+      "nroFactura": "",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2000
+    },
+    {
+      "id": 3,
+      "fecha": "2022-09-05",
+      "nroFactura": "",
+      "Cliente": "Telma Cordoba",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 9000
+    }
   ]
 }

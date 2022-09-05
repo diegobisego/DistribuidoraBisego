@@ -1,22 +1,36 @@
 const alertCarga = (tipo, param) => {
-  if (tipo == 1) {
-    Swal.fire({
-      position: "top",
-      icon: "success",
-      title: `${param} fue cargado con Exito!`,
-      showConfirmButton: false,
-      timer: 1500,
-      toast: true,
-    });
-  } else {
-    Swal.fire({
-      position: "center",
-      icon: "error",
-      title: `El ${param} ya existe`,
-      showConfirmButton: false,
-      timer: 2000,
-      toast: true,
-    });
+  switch (tipo) {
+    case 1:
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: `${param} fue cargado con Exito!`,
+        showConfirmButton: false,
+        timer: 1500,
+        toast: true,
+      });      
+      break;
+    case 2:
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: `El ${param} ya existe`,
+        showConfirmButton: false,
+        timer: 2000,
+        toast: true,
+      });
+      break
+      case 3:
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `Registro de ${param} cargado con exito!`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      break
+      default:  
+      break;
   }
 };
 

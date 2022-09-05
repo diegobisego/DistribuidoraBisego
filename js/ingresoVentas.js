@@ -71,7 +71,7 @@ idVtaProd.addEventListener('change', () => {
 
 /************* SELECT CLIENTES POR FETCH******************/ 
 
-//Metodo GET para FETCH de clientes, para luego comparar contenido
+//Metodo GET para FETCH de clientes
 fetch('http://localhost:5000/clientes')
   .then((res) => res.json())
   .then((data) => {
@@ -85,7 +85,7 @@ const cargaClientes = () => {
     const option = document.createElement('option');
     opCliente.appendChild(option)
     option.innerHTML = clientes[i].nombre
-    option.setAttribute('value',i)
+    option.setAttribute('value',clientes[i].nombre)
   }
 }
 
@@ -96,7 +96,7 @@ const cargaTipoPago = () => {
     const option = document.createElement('option');
     opTipoPago.appendChild(option)
     option.innerHTML = clientes[i].tipoPago
-    option.setAttribute('value',i)
+    option.setAttribute('value',clientes[i].tipoPago)
   }
 }
 
@@ -169,25 +169,39 @@ btnagregarListaVenta.addEventListener('click', () => {
 
 /************* FINALIZAR VENTA ******************/ 
 
+const ventas = []
+
+//Metodo GET para FETCH de ventas
+fetch('http://localhost:5000/ventas')
+  .then((res) => res.json())
+  .then((data) => {
+    ventas.push(...data);
+});
+
 const btnFinalizarVenta = document.querySelector('#btnFinalizarVenta');
 
-btnFinalizarVenta.addEventListener('click', () => {
+const finalizarVenta = () => {
 
-  fetch('http://localhost:5000/Ventas', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json; charset=UTF-8',
-    },
-    body: JSON.stringify({
-      id:"",
-      fecha: inDate.value,
-      nroFactura: inNroFactura.value,
-      Cliente: opCliente.value,
-      tipoPago: opTipoPago.value,
-      montoTotal: Number(total)
-    })
+  btnFinalizarVenta.addEventListener('click', () => {
+    setTimeout(() => {      
+      fetch('http://localhost:5000/Ventas', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({
+          id:ventas.length + 1,
+          fecha: inDate.value,
+          nroFactura: inNroFactura.value,
+          Cliente: opCliente.value,
+          tipoPago: opTipoPago.value,
+          montoTotal: Number(total)
+        })
+      })  
+    }, 1500)
+    alertCarga(3, 'venta')
   })
+}
 
-})
 
-
+finalizarVenta()
