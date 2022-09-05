@@ -1,7 +1,7 @@
 const formregistro = document.querySelector('#btnRegistrar');
-formregistro.addEventListener('submit', (e) =>{
+formregistro.addEventListener('submit', (e) => {
   e.preventDefault()
-})  
+})
 
 /************************** FETCH GET ***************************** */
 let usuariosRegistrados = [];
@@ -11,62 +11,59 @@ fetch('http://localhost:5000/usuarios')
   .then((res) => res.json())
   .then((data) => {
     usuariosRegistrados.push(...data);
-});
-
-console.log(usuariosRegistrados)
+  });
 
 /************************** FETCH REGISTRO ***************************** */
 const btnRegistrar = document.querySelector('#btnRegistrar');
 
 
 btnRegistrar.addEventListener('click', () => {
+debugger  
+  const regUser = document.querySelector('#regUser').value;
+  const regPass = document.querySelector('#regPass').value;
 
-    const regUser = document.querySelector('#regUser').value;
-    const regPass = document.querySelector('#regPass').value;
+  usuarioLower = regUser.toLowerCase()
 
-    const existe = usuariosRegistrados.some( user => user.nombreUsuario == regUser)
-    
-    usuarioLower = regUser.toLowerCase()
+  const existe = usuariosRegistrados.some(user => user.nombreUsuario == usuarioLower)
 
-    const validacionUsuario = usuarioLower.split('');
+  const validacionUsuario = usuarioLower.split('');
 
-    for (const i of validacionUsuario) {
-      if (i == '' || i == ' ') {
-        invalido(4)
-        return
-      }
-    }
-
-    if (usuarioLower.length < 4 || regPass.length < 4) {
-      invalido(5)
+  // valida que no contenga espacios o este vacio
+  for (const i of validacionUsuario) {
+    if (i == '' || i == ' ') {
+      invalido(4)
       return
     }
-  
-    
-    if (existe) {
-      //en aletras.js
-      invalido(3)
-    } else {
-      const idRegistro = Number(usuariosRegistrados.length + 1)
-      debugger
-      fetch('http://localhost:5000/Usuarios', {
-         method: 'POST',
-         headers: {
-           'content-type': 'application/json; charset=UTF-8',
-         },
-           body: JSON.stringify({
-           id:idRegistro,
-           nombreUsuario: regUser,
-           password: regPass
-           })
-         }).then(
-          alertCarga(1,'usuario'))
-          setTimeout(() => {
-            console.log('prueba')
-         },2000)      
+  }
 
-    }
+  if (usuarioLower.length < 4 || regPass.length < 4) {
+    invalido(5)
+    return
+  }
 
+
+  if (existe) {
+    //en alertas.js
+    invalido(3)
+  } else {
+    postRegistro(regUser,regPass)
+    alertCarga(1, 'usuario')
+  }
 })
 
+
+const postRegistro = (user,pass) => {
+  const idRegistro = Number(usuariosRegistrados.length + 1)
+  fetch('http://localhost:5000/Usuarios', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json; charset=UTF-8',
+    },
+    body: JSON.stringify({
+      id: idRegistro,
+      nombreUsuario: user,
+      password: pass
+    })
+  })
+}
 

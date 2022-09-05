@@ -60,7 +60,7 @@
   "usuarios": [
     {
       "id": 1,
-      "nombreUsuario": "Diego",
+      "nombreUsuario": "diego",
       "password": "123456"
     }
   ],
