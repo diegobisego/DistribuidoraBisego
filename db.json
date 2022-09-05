@@ -17,13 +17,6 @@
       "id": 2
     },
     {
-      "tipo": "",
-      "tamanio": 0,
-      "precio": 0,
-      "stock": 0,
-      "id": 3
-    },
-    {
       "tipo": "Aceite Comestible",
       "tamanio": 10,
       "um": "L",
@@ -74,44 +67,28 @@
   "userLogin": [],
   "ventas": [
     {
-      "id": 1,
       "fecha": "2022-09-05",
-      "nroFactura": "1231321",
+      "nroFactura": "123212",
       "Cliente": "Jorge Perez",
       "tipoPago": "Transferencia",
-      "montoTotal": 2000
-    },
-    {
-      "id": 2,
-      "fecha": "2022-09-05",
-      "nroFactura": "",
-      "Cliente": "Jorge Perez",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2000
-    },
-    {
-      "id": 3,
-      "fecha": "2022-09-05",
-      "nroFactura": "",
-      "Cliente": "Telma Cordoba",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 9000
-    },
-    {
-      "id": 4,
-      "fecha": "2022-09-05",
-      "nroFactura": "",
-      "Cliente": "Jorge Perez",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2000
-    },
-    {
-      "id": 5,
-      "fecha": "2022-09-05",
-      "nroFactura": "",
-      "Cliente": "Jorge Perez",
-      "tipoPago": "Transferencia",
-      "montoTotal": 13900
+      "montoTotal": 17000,
+      "listaProductos": {
+        "listaProducto": [
+          {
+            "contador": 1,
+            "producto": "Aceitunas 5 Kg",
+            "cantidad": 2,
+            "totaProduc:": 5000
+          },
+          {
+            "contador": 2,
+            "producto": "Aceite Comestible 10 L",
+            "cantidad": 3,
+            "totaProduc:": 12000
+          }
+        ]
+      },
+      "id": 1
     }
   ]
 }

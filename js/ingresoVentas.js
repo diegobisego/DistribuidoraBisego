@@ -158,11 +158,15 @@ btnagregarListaVenta.addEventListener('click', () => {
   prodClone.children[2].innerText = cant
   prodClone.children[3].innerText = precio * cant
 
+  listaProducto.push({
+    'contador': contador,
+    'producto': producto,
+    'cantidad': cant,
+    'totaProduc:': precio * cant
+  })
+  
+
   total += precio * cant
-
-
-  const nuevoProdcuto = new ProductoVenta(contador,producto,cant,precio)
-  listaProducto.push(nuevoProdcuto)
 
   let btn = prodClone.querySelector("#btnEliminar");    
 
@@ -203,7 +207,6 @@ fetch('http://localhost:5000/ventas')
  const btnFinalizarVenta = document.querySelector('#btnFinalizarVenta');
 
  btnFinalizarVenta.addEventListener('click', () =>  {
-   debugger
    const tieneHijos = document.querySelector('#tVentas').childElementCount
 
    if (inDate.value == '' || opCliente.value == 'Seleccione un cliente' || opTipoPago.value == 'Seleccione un tipo' || tieneHijos == 1) {
@@ -217,14 +220,16 @@ fetch('http://localhost:5000/ventas')
          'content-type': 'application/json; charset=UTF-8',
        },
        body: JSON.stringify({
-         id:ventas.length + 1,
          fecha: inDate.value,
          nroFactura: inNroFactura.value,
          Cliente: opCliente.value,
          tipoPago: opTipoPago.value,
-         montoTotal: Number(total)
+         montoTotal: Number(total),
+         listaProductos:{listaProducto},
+         id:ventas.length + 1
        })
      })  
    }, 1500)
-   alertCarga(3, 'venta')
+   alertCarga(3, 'venta');
+   listaProducto = [];
  })
