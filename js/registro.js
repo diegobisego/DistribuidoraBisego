@@ -46,7 +46,9 @@ debugger
     //en alertas.js
     invalido(3)
   } else {
-    postRegistro(regUser,regPass)
+    setTimeout(() => {
+      postRegistro(regUser,regPass)
+    }, 1500);
     alertCarga(1, 'usuario')
   }
 })

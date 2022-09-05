@@ -38,7 +38,7 @@ const opTipoPago = document.querySelector('#opTipoPago')
 
 /************* SE CARGAN POR FETCH LOS PRODUCTOS ACTIVOS EN EL SISTEMA ******************/ 
 
-//Metodo GET para FETCH de productos, para luego comparar contenido
+//Metodo GET para FETCH de productos
 fetch('http://localhost:5000/productos')
   .then((res) => res.json())
   .then((data) => {
@@ -52,10 +52,22 @@ const cargaProductos = () => {
   for (const i in productos) {
     const option = document.createElement('option');
     idVtaProd.appendChild(option)
-    option.innerHTML = productos[i].tipo
+    option.innerHTML = productos[i].tipo + ' ' + productos[i].tamanio + ' ' +  productos[i].um
     option.setAttribute('value',i)
   }
 }
+
+/************* PRECIO DEL PRODUCTO SEGUN LA SELECCION ******************/ 
+
+idVtaProd.addEventListener('change', () => {
+  const seleccion = idVtaProd.options[idVtaProd.selectedIndex].text;
+  
+  productos.find(element => {
+      let producto = element.tipo + ' ' + element.tamanio + ' ' + element.um 
+      if (producto == seleccion) precioUnitario.value = element.precio
+  });
+
+})
 
 /************* SELECT CLIENTES POR FETCH******************/ 
 
@@ -89,16 +101,7 @@ const cargaTipoPago = () => {
 }
 
 
-/************* PRECIO DEL PRODUCTO SEGUN LA SELECCION ******************/ 
 
-idVtaProd.addEventListener('change', () => {
-  const seleccion = idVtaProd.options[idVtaProd.selectedIndex].text;
-  
-  productos.find(element => {
-      if (element.tipo == seleccion) precioUnitario.value = element.precio
-  });
-
-})
 
 
 /************* TIPO DE PAGO SEGUN LA SELECCION DE CLIENTE  ******************/ 
