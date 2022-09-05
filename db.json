@@ -7,6 +7,29 @@
       "precio": 2300,
       "stock": 6000,
       "id": 1
+    },
+    {
+      "tipo": "Aceitunas",
+      "tamanio": "5",
+      "um": "Kg",
+      "precio": 2500,
+      "stock": 4000,
+      "id": 2
+    },
+    {
+      "tipo": "",
+      "tamanio": 0,
+      "precio": 0,
+      "stock": 0,
+      "id": 3
+    },
+    {
+      "tipo": "Aceite Comestible",
+      "tamanio": 10,
+      "um": "L",
+      "precio": 4000,
+      "stock": 6000,
+      "id": 4
     }
   ],
   "clientes": [

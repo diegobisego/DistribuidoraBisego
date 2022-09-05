@@ -56,6 +56,13 @@ idUM.addEventListener('change', (event) => {
 
 //evento de boton
 boton.addEventListener('click', () => { 
+
+  //verifico campos vacios
+  if (tipoProducto.value == '' || tipoTamPeso.value == '' || precio.value == '' || stock.value == '') {
+    invalido(6)
+    return;
+  }
+
   debugger
   //Verifico si el array esta vacio, se llena
   if (productos.length == 0) {
@@ -90,12 +97,12 @@ setTimeout(() => {
     'content-type': 'application/json; charset=UTF-8',
   },
     body: JSON.stringify({
-    id: contadorId,
     tipo: tipoProducto.value,
     tamanio: Number(tipoTamPeso.value),
     um: UM,
     precio: Number(precio.value),
-    stock: Number(stock.value)
+    stock: Number(stock.value),
+    id: contadorId,
     })
   })
   
