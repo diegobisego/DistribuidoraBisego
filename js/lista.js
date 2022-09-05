@@ -79,16 +79,26 @@ const listaProductos = () => {
       inEditarStock.value = Number(elem.stock);
 
       const btnConfirmarEdicion = document.querySelector('#btnConfirmarEdicion');
-
+      debugger
+      console.log(inEditarTipo.value)
       btnConfirmarEdicion.addEventListener('click', () => {
-        fetch(`http://localhost:5000/Productos/${id}`, {
-          method: 'PATCH',
-          headers: {
-            'content-type': 'application/json; charset=UTF-8',
-          },
-          precio: Number(inEditarPrecio.value),
-          stock: Number(inEditarStock.value)
-        })
+        setTimeout(() => {
+          
+          fetch(`http://localhost:5000/Productos/${id}`, {
+            method: 'PUT',
+            headers: {
+              'content-type': 'application/json; charset=UTF-8',
+            },
+            body: JSON.stringify({
+              tipo: inEditarTipo.value,
+              tamanio: inEditarTamanio.value,
+              um: idEditarUM.value,
+              precio: Number(inEditarPrecio.value),
+              stock: Number(inEditarStock.value)
+            })
+          })
+        }, 1200)
+        alertCarga(4,'producto')
       })
     })
 

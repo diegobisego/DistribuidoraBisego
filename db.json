@@ -1,28 +1,12 @@
 {
   "productos": [
     {
-      "id": 1,
       "tipo": "Aceite Comestible",
-      "tamanio": 5,
+      "tamanio": "5",
       "um": "L",
-      "precio": 2000,
-      "stock": 5000
-    },
-    {
-      "id": 2,
-      "tipo": "Aceitunas",
-      "tamanio": 5,
-      "um": "Kg",
-      "precio": 3000,
-      "stock": 5600
-    },
-    {
-      "id": 7,
-      "tipo": "Ajies",
-      "tamanio": 800,
-      "um": "G",
-      "precio": 450,
-      "stock": 1200
+      "precio": 2300,
+      "stock": 6000,
+      "id": 1
     }
   ],
   "clientes": [
@@ -64,12 +48,7 @@
       "password": "123456"
     }
   ],
-  "userLogin": [
-    {
-      "user": "Grunklen",
-      "id": "1"
-    }
-  ],
+  "userLogin": [],
   "ventas": [
     {
       "id": 1,
@@ -102,6 +81,14 @@
       "Cliente": "Jorge Perez",
       "tipoPago": "Contado Efectivo",
       "montoTotal": 2000
+    },
+    {
+      "id": 5,
+      "fecha": "2022-09-05",
+      "nroFactura": "",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Transferencia",
+      "montoTotal": 13900
     }
   ]
 }

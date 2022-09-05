@@ -13,7 +13,7 @@ btnUser.addEventListener('click', () => {
       }).then((result) => {
         if (result.isConfirmed) {
           localStorage.setItem('user','');
-          window.location.href = "../login.html"
+          window.location.href = "../index.html"
         } 
       })
 })
