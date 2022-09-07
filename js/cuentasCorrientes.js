@@ -36,8 +36,6 @@ const cargarCtasCtes = () => {
                   <tr>
                     <th scope="col">Fecha</th>
                     <th scope="col">Nro Factura</th>
-                    <th scope="col">Debe</th>
-                    <th scope="col">Haber</th>
                     <th scope="col">Saldo</th>
                   </tr>
                 </thead>
@@ -46,14 +44,12 @@ const cargarCtasCtes = () => {
                     <th scope="row">${ventas[key].fecha}</th>
                     <td>${ventas[key].nroFactura}</td>
                     <td>${ventas[key].montoTotal}</td>
-                    <td>${ventas[key].montoTotal}</td>
-                    <td>${ventas[key].montoTotal}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        `;
+        `
   }
 };
 

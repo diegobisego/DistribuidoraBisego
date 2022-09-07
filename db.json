@@ -65,30 +65,6 @@
     }
   ],
   "userLogin": [],
-  "ventas": [
-    {
-      "fecha": "2022-09-05",
-      "nroFactura": "123212",
-      "Cliente": "Jorge Perez",
-      "tipoPago": "Transferencia",
-      "montoTotal": 17000,
-      "listaProductos": {
-        "listaProducto": [
-          {
-            "contador": 1,
-            "producto": "Aceitunas 5 Kg",
-            "cantidad": 2,
-            "totaProduc:": 5000
-          },
-          {
-            "contador": 2,
-            "producto": "Aceite Comestible 10 L",
-            "cantidad": 3,
-            "totaProduc:": 12000
-          }
-        ]
-      },
-      "id": 1
-    }
-  ]
+  "ventas": [],
+  "saldos": []
 }
