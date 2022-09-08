@@ -283,12 +283,16 @@
   ],
   "saldos": [
     {
+      "id": 1,
+      "nombre": "Diego Bisego",
       "debe": 4600,
-      "saldo": 4600,
-      "id": 1
+      "haber":0,
+      "saldo": 4600
+
     },
     {
       "id": 2,
+      "nombre": "Jorge Perez",
       "debe": 2300,
       "haber": 0,
       "saldo": 2300

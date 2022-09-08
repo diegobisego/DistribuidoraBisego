@@ -220,7 +220,7 @@ btnFinalizarVenta.addEventListener("click", () => {
         montoTotal: Number(total),
         listaProducto,
       }),
-    }).then(agregarSaldo(total, clienteId)),
+    }).then(agregarSaldo(total, clienteId,clienteNombre)),
       1800;
   });
   alertCarga(3, "venta");
@@ -238,8 +238,7 @@ fetch("http://localhost:5000/saldos")
   });
 
 //metodo POST y PUT para cargar saldos en las cuentas
-const agregarSaldo = (total, clienteId) => {
-  debugger;
+const agregarSaldo = (total, clienteId,clienteNombre) => {
   let existe = saldos.some((saldoId) => saldoId.id == clienteId);
 
   if (existe) {
@@ -270,6 +269,7 @@ const agregarSaldo = (total, clienteId) => {
         },
         body: JSON.stringify({
           id: clienteId,
+          nombre: clienteNombre,
           debe: total,
           haber: 0,
           saldo: total,
