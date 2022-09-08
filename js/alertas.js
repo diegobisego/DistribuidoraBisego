@@ -24,7 +24,7 @@ const alertCarga = (tipo, param) => {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: `Registro de ${param} cargado con exito!`,
+          title: `Registro de ${param} exitoso`,
           showConfirmButton: false,
           timer: 1500
         })

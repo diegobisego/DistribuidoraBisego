@@ -65,6 +65,233 @@
     }
   ],
   "userLogin": [],
-  "ventas": [],
-  "saldos": []
+  "ventas": [
+    {
+      "fecha": "2022-09-07",
+      "nroFactura": "123",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 1
+    },
+    {
+      "fecha": "2022-09-07",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 2
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "324",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 4600,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        },
+        {
+          "contador": 2,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 3
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 4
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "2323",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 5000,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceitunas 5 Kg",
+          "cantidad": 2,
+          "totaProduc:": 5000
+        }
+      ],
+      "id": 5
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 6
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 7
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 8
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 9
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 10
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 11
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 12
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 13
+    }
+  ],
+  "saldos": [
+    {
+      "debe": 4600,
+      "saldo": 4600,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "debe": 2300,
+      "haber": 0,
+      "saldo": 2300
+    }
+  ]
 }

@@ -8,8 +8,6 @@ formVentas.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-
-
 /************* CONSTANTES ******************/
 
 //template para lista de venta
@@ -55,8 +53,7 @@ fetch("http://localhost:5000/productos")
   .then((data) => {
     productos.push(...data);
     cargaProductos();
-});
-
+  });
 
 //Metodo GET para FETCH de clientes
 fetch("http://localhost:5000/clientes")
@@ -67,15 +64,12 @@ fetch("http://localhost:5000/clientes")
     cargaTipoPago();
   });
 
-
-  //Metodo GET para FETCH de ventas
+//Metodo GET para FETCH de ventas
 fetch("http://localhost:5000/ventas")
-.then((res) => res.json())
-.then((data) => {
-  ventas.push(...data);
-});
-
-
+  .then((res) => res.json())
+  .then((data) => {
+    ventas.push(...data);
+  });
 
 /************* CARGA SELECCIONES ******************/
 
@@ -87,7 +81,6 @@ idVtaProd.addEventListener("change", () => {
     if (producto == seleccion) precioUnitario.value = element.precio;
   });
 });
-
 
 const cargaProductos = () => {
   for (const i in productos) {
@@ -116,8 +109,6 @@ const cargaTipoPago = () => {
     option.setAttribute("value", clientes[i].tipoPago);
   }
 };
-
-
 
 /************* TIPO DE PAGO SEGUN LA SELECCION DE CLIENTE  ******************/
 
@@ -188,11 +179,9 @@ btnagregarListaVenta.addEventListener("click", () => {
 
 /************* FINALIZAR VENTA ******************/
 
-
 const btnFinalizarVenta = document.querySelector("#btnFinalizarVenta");
 
 btnFinalizarVenta.addEventListener("click", () => {
-  debugger
 
   //sirve para verificar que la lista no este vacia antes de finalizar la venta
   const tieneHijos = document.querySelector("#tVentas").childElementCount;
@@ -207,16 +196,15 @@ btnFinalizarVenta.addEventListener("click", () => {
     return;
   }
 
-  let clienteNombre = opCliente.value
+  let clienteNombre = opCliente.value;
   let clienteId = 0;
-  
+
   for (const key in clientes) {
-      if (clienteNombre == clientes[key].nombre) {
-        clienteId = clientes[key].id
-        break
-      }
+    if (clienteNombre == clientes[key].nombre) {
+      clienteId = clientes[key].id;
+      break;
+    }
   }
-  
 
   setTimeout(() => {
     fetch("http://localhost:5000/Ventas", {
@@ -231,14 +219,12 @@ btnFinalizarVenta.addEventListener("click", () => {
         tipoPago: opTipoPago.value,
         montoTotal: Number(total),
         listaProducto,
-        id: ventas.length + 1,
-      })
-    }).then(agregarSaldo(total,clienteId))
-    
-    , 1500})
+      }),
+    }).then(agregarSaldo(total, clienteId)),
+      1800;
+  });
   alertCarga(3, "venta");
 });
-
 
 /************* AGREGAR EL SALDO A LA CUENTA DEL CLIENTE ******************/
 
@@ -251,13 +237,32 @@ fetch("http://localhost:5000/saldos")
     saldos.push(...data);
   });
 
-const agregarSaldo = (clienteId,total) => {
-debugger
-    let existe = saldos.find((saldoId) => saldoId.id == clienteId)
+//metodo POST y PUT para cargar saldos en las cuentas
+const agregarSaldo = (total, clienteId) => {
+  debugger;
+  let existe = saldos.some((saldoId) => saldoId.id == clienteId);
 
-    if (existe) {
-      null
-    } else {
+  if (existe) {
+    for (const key in saldos) {
+      
+      if (saldos[key].id == clienteId) {
+
+        total += saldos[key].saldo;
+
+        fetch(`http://localhost:5000/saldos/${clienteId}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json; charset=UTF-8",
+          },
+          body: JSON.stringify({
+            debe: total,
+            saldo: total,
+          }),
+        });
+        break
+      }
+    }
+  } else {
       fetch("http://localhost:5000/saldos", {
         method: "POST",
         headers: {
@@ -270,7 +275,5 @@ debugger
           saldo: total,
         }),
       });
-
-    }
-    
-}
+  }
+};
