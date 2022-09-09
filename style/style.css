@@ -144,7 +144,7 @@ body {
 }
 
 
-#portalVentas {
+#portalVentas, #portalPagos {
     justify-content: space-between;
     
 }
@@ -194,7 +194,7 @@ body {
 
 /*************** CUENTAS CORRIENTES ******************/
 
-#mainCtaCte {
+#mainCtaCte, #mainPagos select {
     text-align: center;
 }
 
@@ -203,3 +203,16 @@ body {
     justify-content: center;
 }
 
+
+/*************** CUENTAS PAGOS ******************/
+
+#inDatePago {
+    width: 200px;
+}
+
+#datosParaCheques {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+}
