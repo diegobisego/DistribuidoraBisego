@@ -12,7 +12,7 @@
       "tipo": "Aceitunas",
       "tamanio": "5",
       "um": "Kg",
-      "precio": 2500,
+      "precio": 3000,
       "stock": 4000,
       "id": 2
     },
@@ -23,6 +23,14 @@
       "precio": 4000,
       "stock": 6000,
       "id": 4
+    },
+    {
+      "tipo": "Arroz",
+      "tamanio": 100,
+      "um": "G",
+      "precio": 150,
+      "stock": 10,
+      "id": 5
     }
   ],
   "clientes": [
@@ -55,6 +63,46 @@
       "Ciudad": "Villa Maria",
       "email": "diegobisego@gmail.com",
       "tipoPago": "Contado Efectivo"
+    },
+    {
+      "id": 4,
+      "nombre": "Geraldina Cordoba",
+      "dniCuit": "37000234",
+      "telefono": "321321313",
+      "domicilio": "Pellegrini 342",
+      "Ciudad": "Villa Maria",
+      "email": "gera@gmail.com",
+      "tipoPago": "Cheque"
+    },
+    {
+      "id": 5,
+      "nombre": "Sancor",
+      "dniCuit": "123123123",
+      "telefono": "123123123",
+      "domicilio": "Pellegrini 342",
+      "Ciudad": "Villa Maria",
+      "email": "test@gmail.com",
+      "tipoPago": "Contado Efectivo"
+    },
+    {
+      "id": 6,
+      "nombre": "Telma Cordoba",
+      "dniCuit": "12312313123123123",
+      "telefono": "1231232",
+      "domicilio": "Pellegrini 342",
+      "Ciudad": "Villa Maria",
+      "email": "diegobisego@gmail.com",
+      "tipoPago": "Contado Efectivo"
+    },
+    {
+      "id": 7,
+      "nombre": "Telma Cordoba",
+      "dniCuit": "123",
+      "telefono": "123",
+      "domicilio": "123",
+      "Ciudad": "Villa Maria",
+      "email": "diegobisego@gmail.com",
+      "tipoPago": "Contado Efectivo"
     }
   ],
   "usuarios": [
@@ -62,6 +110,11 @@
       "id": 1,
       "nombreUsuario": "diego",
       "password": "123456"
+    },
+    {
+      "id": 2,
+      "nombreUsuario": "Jero",
+      "password": "test123"
     }
   ],
   "userLogin": [],
@@ -279,16 +332,97 @@
         }
       ],
       "id": 13
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "1234",
+      "Cliente": "Geraldina Cordoba",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 20300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        },
+        {
+          "contador": 2,
+          "producto": "Aceitunas 5 Kg",
+          "cantidad": 2,
+          "totaProduc:": 6000
+        },
+        {
+          "contador": 3,
+          "producto": "Aceite Comestible 10 L",
+          "cantidad": 3,
+          "totaProduc:": 12000
+        }
+      ],
+      "id": 14
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Geraldina Cordoba",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 2300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        }
+      ],
+      "id": 15
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "",
+      "Cliente": "Geraldina Cordoba",
+      "tipoPago": "Transferencia",
+      "montoTotal": 10300,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 2300
+        },
+        {
+          "contador": 2,
+          "producto": "Aceite Comestible 10 L",
+          "cantidad": 2,
+          "totaProduc:": 8000
+        }
+      ],
+      "id": 16
+    },
+    {
+      "fecha": "2022-09-08",
+      "nroFactura": "123",
+      "Cliente": "Diego Bisego",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 150,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Arroz 100 G",
+          "cantidad": 1,
+          "totaProduc:": 150
+        }
+      ],
+      "id": 17
     }
   ],
   "saldos": [
     {
       "id": 1,
       "nombre": "Diego Bisego",
-      "debe": 4600,
-      "haber":0,
-      "saldo": 4600
-
+      "debe": 4750,
+      "haber": 0,
+      "saldo": 4750
     },
     {
       "id": 2,
@@ -296,6 +430,13 @@
       "debe": 2300,
       "haber": 0,
       "saldo": 2300
+    },
+    {
+      "id": 4,
+      "nombre": "Geraldina Pajares",
+      "debe": 5000,
+      "haber": 2000,
+      "saldo": 3000
     }
   ]
 }

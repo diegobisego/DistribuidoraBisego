@@ -76,7 +76,8 @@ const labelChecked = document.getElementsByName('labelTipoPago')
 
 
 //boton cargar
-btnCargaClientes.addEventListener('click', () => {
+btnCargaClientes.addEventListener('click', (e) => {
+  e.preventDefault()
 
 
   //validacion de campos
@@ -111,8 +112,9 @@ btnCargaClientes.addEventListener('click', () => {
 
 //funcion POST
 const postClientes = (contadorId, inNombreCliente, inDniCuitCliente, inTelefonoCliente, inDomicilioCliente, selCiudadCliente, inEmailCliente, selecTipoPago) => {
-
+debugger
   setTimeout(() => {
+
     fetch('http://localhost:5000/clientes', {
       method: 'POST',
       headers: {

@@ -240,7 +240,7 @@ fetch("http://localhost:5000/saldos")
 //metodo POST y PUT para cargar saldos en las cuentas
 const agregarSaldo = (total, clienteId,clienteNombre) => {
   let existe = saldos.some((saldoId) => saldoId.id == clienteId);
-
+  debugger
   if (existe) {
     for (const key in saldos) {
       
@@ -249,7 +249,7 @@ const agregarSaldo = (total, clienteId,clienteNombre) => {
         total += saldos[key].saldo;
 
         fetch(`http://localhost:5000/saldos/${clienteId}`, {
-          method: "PUT",
+          method: "PATCH",
           headers: {
             "content-type": "application/json; charset=UTF-8",
           },

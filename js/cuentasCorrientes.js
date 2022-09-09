@@ -18,12 +18,24 @@ const cargarCuentasCorrientes = () => {
   const fragmento = document.createDocumentFragment()
 
 
-  saldos.forEach((el) => {
-    templateCuentasCorrientes.querySelector('#idClienteLista').innerHTML = el.id
-    templateCuentasCorrientes.querySelector('#nombreCliente').innerHTML = el.nombre
-    templateCuentasCorrientes.querySelector('#debeCliente').innerHTML = el.debe
-    templateCuentasCorrientes.querySelector('#haberCliente').innerHTML = el.haber
-    templateCuentasCorrientes.querySelector('#saldoCliente').innerHTML = el.saldo
+  saldos.forEach((elem) => {
+
+    //traigo todos los elementos para insertar los saldos
+    templateCuentasCorrientes.querySelector('#idClienteLista').innerHTML = elem.id
+    templateCuentasCorrientes.querySelector('#nombreCliente').innerHTML = elem.nombre
+    templateCuentasCorrientes.querySelector('#debeCliente').innerHTML = '$ ' + elem.debe
+    templateCuentasCorrientes.querySelector('#haberCliente').innerHTML = '$ ' + elem.haber
+    templateCuentasCorrientes.querySelector('#saldoCliente').innerHTML = '$ ' + elem.saldo
+
+    //condicional para linea de campo si tiene deuda o esta al dia
+    const estadoDeuda = templateCuentasCorrientes.querySelector('#idPorEstado')
+
+    if (elem.saldo > 0) {
+      estadoDeuda.setAttribute('class','table-danger')
+    } else {
+      estadoDeuda.setAttribute('class','table-success')
+    }
+
 
     let clone = document.importNode(templateCuentasCorrientes,true) 
     fragmento.appendChild(clone)

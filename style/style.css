@@ -198,7 +198,8 @@ body {
     text-align: center;
 }
 
-#titleCuentasCorrientes {
+.display-4 , .display-6 {
     display: flex;
     justify-content: center;
 }
+

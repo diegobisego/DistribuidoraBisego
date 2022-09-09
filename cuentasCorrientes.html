@@ -46,11 +46,12 @@
       </div>
     </nav>
   </header>
-  <h1 class="display-4" id="titleCuentasCorrientes">CUENTAS CORRIENTES CLIENTES</h1>
+  <h1 class="display-4" id="titleCuentasCorrientes">CUENTAS CORRIENTES</h1>
+  <h2 class="display-6">CLIENTES</h2>
   <main class="container" id="mainCtaCte">
     <table class="table table-light">
       <thead>
-        <tr>
+        <tr class="table-dark">
           <th scope="col">Id Cliente</th>
           <th scope="col">Cliente</th>
           <th scope="col">Debe</th>
@@ -60,7 +61,7 @@
       </thead>
       <tbody id="mainCuentasCorrientes">
         <template id="templateCuentasCorrientes">
-          <tr>
+          <tr id="idPorEstado">
             <th scope="row" id="idClienteLista"></th>
             <td id="nombreCliente"></td>
             <td id="debeCliente"></td>
