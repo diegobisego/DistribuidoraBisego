@@ -15,22 +15,6 @@
       "precio": 3000,
       "stock": 4000,
       "id": 2
-    },
-    {
-      "tipo": "Aceite Comestible",
-      "tamanio": 10,
-      "um": "L",
-      "precio": 4000,
-      "stock": 6000,
-      "id": 4
-    },
-    {
-      "tipo": "Arroz",
-      "tamanio": 100,
-      "um": "G",
-      "precio": 150,
-      "stock": 10,
-      "id": 5
     }
   ],
   "clientes": [
@@ -46,63 +30,23 @@
     },
     {
       "id": 2,
-      "nombre": "Jorge Perez",
-      "dniCuit": "345345345",
-      "telefono": "4354353",
+      "nombre": "Telma Cordoba",
+      "dniCuit": "32541856",
+      "telefono": "324234234",
       "domicilio": "Pellegrini 342",
-      "Ciudad": "Villa Maria",
-      "email": "diegobisego@gmail.com",
+      "Ciudad": "Cordoba Capital",
+      "email": "sadasda@asdasd.com",
       "tipoPago": "Transferencia"
     },
     {
       "id": 3,
-      "nombre": "Telma Cordoba",
-      "dniCuit": "34535345",
-      "telefono": "345345",
-      "domicilio": "Pellegrini 342",
+      "nombre": "Jorge Perez",
+      "dniCuit": "324324234",
+      "telefono": "3423422",
+      "domicilio": "prueba 1234",
       "Ciudad": "Villa Maria",
       "email": "diegobisego@gmail.com",
-      "tipoPago": "Contado Efectivo"
-    },
-    {
-      "id": 4,
-      "nombre": "Geraldina Cordoba",
-      "dniCuit": "37000234",
-      "telefono": "321321313",
-      "domicilio": "Pellegrini 342",
-      "Ciudad": "Villa Maria",
-      "email": "gera@gmail.com",
       "tipoPago": "Cheque"
-    },
-    {
-      "id": 5,
-      "nombre": "Sancor",
-      "dniCuit": "123123123",
-      "telefono": "123123123",
-      "domicilio": "Pellegrini 342",
-      "Ciudad": "Villa Maria",
-      "email": "test@gmail.com",
-      "tipoPago": "Contado Efectivo"
-    },
-    {
-      "id": 6,
-      "nombre": "Telma Cordoba",
-      "dniCuit": "12312313123123123",
-      "telefono": "1231232",
-      "domicilio": "Pellegrini 342",
-      "Ciudad": "Villa Maria",
-      "email": "diegobisego@gmail.com",
-      "tipoPago": "Contado Efectivo"
-    },
-    {
-      "id": 7,
-      "nombre": "Telma Cordoba",
-      "dniCuit": "123",
-      "telefono": "123",
-      "domicilio": "123",
-      "Ciudad": "Villa Maria",
-      "email": "diegobisego@gmail.com",
-      "tipoPago": "Contado Efectivo"
     }
   ],
   "usuarios": [
@@ -117,11 +61,10 @@
       "password": "test123"
     }
   ],
-  "userLogin": [],
   "ventas": [
     {
-      "fecha": "2022-09-07",
-      "nroFactura": "123",
+      "fecha": "2022-09-09",
+      "nroFactura": "",
       "Cliente": "Diego Bisego",
       "tipoPago": "Contado Efectivo",
       "montoTotal": 2300,
@@ -136,307 +79,29 @@
       "id": 1
     },
     {
-      "fecha": "2022-09-07",
+      "fecha": "2022-09-09",
       "nroFactura": "",
       "Cliente": "Diego Bisego",
       "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
+      "montoTotal": 3000,
       "listaProducto": [
         {
           "contador": 1,
-          "producto": "Aceite Comestible 5 L",
+          "producto": "Aceitunas 5 Kg",
           "cantidad": 1,
-          "totaProduc:": 2300
+          "totaProduc:": 3000
         }
       ],
       "id": 2
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "324",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 4600,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        },
-        {
-          "contador": 2,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 3
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 4
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "2323",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 5000,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceitunas 5 Kg",
-          "cantidad": 2,
-          "totaProduc:": 5000
-        }
-      ],
-      "id": 5
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 6
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 7
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 8
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 9
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 10
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 11
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 12
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Jorge Perez",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 13
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "1234",
-      "Cliente": "Geraldina Cordoba",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 20300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        },
-        {
-          "contador": 2,
-          "producto": "Aceitunas 5 Kg",
-          "cantidad": 2,
-          "totaProduc:": 6000
-        },
-        {
-          "contador": 3,
-          "producto": "Aceite Comestible 10 L",
-          "cantidad": 3,
-          "totaProduc:": 12000
-        }
-      ],
-      "id": 14
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Geraldina Cordoba",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 15
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "",
-      "Cliente": "Geraldina Cordoba",
-      "tipoPago": "Transferencia",
-      "montoTotal": 10300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        },
-        {
-          "contador": 2,
-          "producto": "Aceite Comestible 10 L",
-          "cantidad": 2,
-          "totaProduc:": 8000
-        }
-      ],
-      "id": 16
-    },
-    {
-      "fecha": "2022-09-08",
-      "nroFactura": "123",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 150,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Arroz 100 G",
-          "cantidad": 1,
-          "totaProduc:": 150
-        }
-      ],
-      "id": 17
     }
   ],
   "saldos": [
     {
       "id": 1,
       "nombre": "Diego Bisego",
-      "debe": 4750,
+      "debe": 5300,
       "haber": 0,
-      "saldo": 4750
-    },
-    {
-      "id": 2,
-      "nombre": "Jorge Perez",
-      "debe": 2300,
-      "haber": 0,
-      "saldo": 2300
-    },
-    {
-      "id": 4,
-      "nombre": "Geraldina Pajares",
-      "debe": 5000,
-      "haber": 2000,
-      "saldo": 3000
+      "saldo": 5300
     }
   ]
 }

@@ -8,7 +8,7 @@ form.addEventListener('submit', (e) =>{
   /************************** FETCH GET ***************************** */
 let usuarios = []
 
-//Metodo GET para FETCH de usuarios, para luego comparar contenido
+//Metodo GET para FETCH de usuarios
 fetch('http://localhost:5000/usuarios')
   .then((res) => res.json())
   .then((data) => {
@@ -32,6 +32,7 @@ btnIngresar.addEventListener('click', () => {
     const existeUser = usuarios.some( user => user.nombreUsuario.toLowerCase() == usuario)
 
     if (existe) {
+      //verifica si exite el usuario en la base y setea en localStorage la letra del nombre, luego redirecciona a bienvenida
       usuario = usuario.charAt(0).toUpperCase() + usuario.slice(1);
       localStorage.setItem('user',usuario)
       window.location.href = "../wcLogin.html"
@@ -46,20 +47,3 @@ btnIngresar.addEventListener('click', () => {
     }       
   
 })
-
-
-
-
-
-// const putLogin = (user) => {
-//     fetch('http://localhost:5000/userLogin/1', {
-//         method: 'PUT',
-//         headers: {
-//           'content-type': 'application/json; charset=UTF-8',
-//         },
-//           body: JSON.stringify({
-//           user: user,
-//           })
-//         })
-// }
-

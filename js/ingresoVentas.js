@@ -110,20 +110,6 @@ const cargaTipoPago = () => {
   }
 };
 
-/************* TIPO DE PAGO SEGUN LA SELECCION DE CLIENTE  ******************/
-
-//SIN TERMINAR
-
-// opCliente.addEventListener("change", () => {
-//   const seleccion = opCliente.options[opCliente.selectedIndex].text;
-
-//   clientes.find((element, index) => {
-//     if (element.nombre == seleccion) {
-//       // opTipoPago.options[opTipoPago.selectedIndex ].find()
-//     }
-//   });
-// });
-
 /************* SE AGREGA VENTA A LA LISTA ******************/
 
 let listaProducto = [];
@@ -182,7 +168,6 @@ btnagregarListaVenta.addEventListener("click", () => {
 const btnFinalizarVenta = document.querySelector("#btnFinalizarVenta");
 
 btnFinalizarVenta.addEventListener("click", () => {
-
   //sirve para verificar que la lista no este vacia antes de finalizar la venta
   const tieneHijos = document.querySelector("#tVentas").childElementCount;
 
@@ -220,7 +205,7 @@ btnFinalizarVenta.addEventListener("click", () => {
         montoTotal: Number(total),
         listaProducto,
       }),
-    }).then(agregarSaldo(total, clienteId,clienteNombre)),
+    }).then(agregarSaldo(total, clienteId, clienteNombre)),
       1800;
   });
   alertCarga(3, "venta");
@@ -238,15 +223,14 @@ fetch("http://localhost:5000/saldos")
   });
 
 //metodo POST y PUT para cargar saldos en las cuentas
-const agregarSaldo = (total, clienteId,clienteNombre) => {
+const agregarSaldo = (total, clienteId, clienteNombre) => {
   let existe = saldos.some((saldoId) => saldoId.id == clienteId);
-  debugger
+
   if (existe) {
     for (const key in saldos) {
-      
       if (saldos[key].id == clienteId) {
-
-        total += saldos[key].saldo;
+        totalDebe = total + saldos[key].debe;
+        totalSaldo = total + saldos[key].saldo;
 
         fetch(`http://localhost:5000/saldos/${clienteId}`, {
           method: "PATCH",
@@ -254,26 +238,26 @@ const agregarSaldo = (total, clienteId,clienteNombre) => {
             "content-type": "application/json; charset=UTF-8",
           },
           body: JSON.stringify({
-            debe: total,
-            saldo: total,
+            debe: totalDebe,
+            saldo: totalSaldo,
           }),
         });
-        break
+        break;
       }
     }
   } else {
-      fetch("http://localhost:5000/saldos", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify({
-          id: clienteId,
-          nombre: clienteNombre,
-          debe: total,
-          haber: 0,
-          saldo: total,
-        }),
-      });
+    fetch("http://localhost:5000/saldos", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify({
+        id: clienteId,
+        nombre: clienteNombre,
+        debe: total,
+        haber: 0,
+        saldo: total,
+      }),
+    });
   }
 };

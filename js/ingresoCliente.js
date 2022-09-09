@@ -112,7 +112,7 @@ btnCargaClientes.addEventListener('click', (e) => {
 
 //funcion POST
 const postClientes = (contadorId, inNombreCliente, inDniCuitCliente, inTelefonoCliente, inDomicilioCliente, selCiudadCliente, inEmailCliente, selecTipoPago) => {
-debugger
+
   setTimeout(() => {
 
     fetch('http://localhost:5000/clientes', {

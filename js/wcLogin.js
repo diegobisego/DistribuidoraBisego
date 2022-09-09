@@ -1,3 +1,5 @@
+//Funcion de bienvenida una vez que se loguea el usuario
+
 let usuario = localStorage.getItem("user");
 
 usuario = usuario.charAt(0).toUpperCase() + usuario.slice(1);

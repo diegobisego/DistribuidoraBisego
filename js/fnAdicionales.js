@@ -1,4 +1,6 @@
   /************************** SOLO LETRAS ***************************** */
+
+  //funcion para que solamente deje colocar letras
   function soloLetras(e) {
     var key = e.keyCode || e.which,
       tecla = String.fromCharCode(key).toLowerCase(),

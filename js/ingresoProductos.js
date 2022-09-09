@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) =>{
   /************************** ARRAYS ADICIONALES ***************************** */
 
 //Carga el select tamaño/peso de productos desd el array
-let tamTipo = ['','G','Kg','L','Medianos','Grandes Color','Grandes Blancos'];
+let tamTipo = ['','UN','G','Kg','L'];
 const idUM = document.querySelector('#idUM')
 
 
@@ -63,14 +63,14 @@ boton.addEventListener('click', () => {
     return;
   }
 
-  debugger
+  
   //Verifico si el array esta vacio, se llena
   if (productos.length == 0) {
     contadorId = 1;
     PostProducto(contadorId,tipoProducto,tipoTamPeso,precio,stock)
     return 
   }
-  console.log(productos.length)
+  
   //verifico que no cargue 2 veces el mismo producto  
   for (const key in productos) {
     if (productos[key].tipo == tipoProducto.value && productos[key].tamanio == tipoTamPeso.value) {
@@ -90,6 +90,8 @@ boton.addEventListener('click', () => {
 
 
 const PostProducto = (contadorId,tipoProducto,tipoTamPeso,precio,stock) => {
+  //realizo un setTimeOut porque LiveServer junto con json server me resetea la pagina al dispararse el Fetch
+  //Esto hace q las alertas posteriores al fetch no se ejecuten, por ende lo coloco asi para q pueda visualizarse
 setTimeout(() => {
   fetch('http://localhost:5000/Productos', {
   method: 'POST',

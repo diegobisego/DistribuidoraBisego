@@ -1,3 +1,5 @@
+
+//evento para cerrar sesion
 const btnUser = document.querySelector('#btnUser');
 
 
