@@ -51,19 +51,19 @@
                 <h1 class="fs-4 fw-light">INGRESO DE PAGOS</h1>
                 <form action="" id="form">
                     <div class="mb-3" id="form-items">
-                        <label for="exampleInputEmail1" class="form-label mt-3">Fecha
-                            <input type="date" class="form-control mt-2 text-center" id="inDatePago"
+                        <label for="inDatePago" class="form-label mt-3">Fecha
+                            <input type="date" class="form-control mt-2 text-center" id="inFechaPago"
                                 aria-describedby="fecha">
                         </label>
                         <div>
-                            <label for="cliente" class="form-label mt-3">Cliente
+                            <label for="opCliente" class="form-label mt-3">Cliente
                                 <select class="form-select" aria-label="cliente" id="opCliente">
                                     <option selected disabled>Seleccione un cliente</option>
                                     <!-- se ingresa por dom la lista de clientes -->
                                 </select>
                             </label>
                         </div>
-                        <label for="montoPago" class="form-label mt-3">Monto a Pagar
+                        <label for="inPago" class="form-label mt-3">Monto a Pagar
                             <input type="number" class="form-control mt-2 text-center" id="inPago"
                                 aria-describedby="montoPago">
                         </label>
@@ -81,20 +81,20 @@
                                 </div>
                             </label>
                             <div id="datosParaCheques">
-                                <label for="exampleInputEmail1" class="form-label mt-3">Fecha Cobro
-                                    <input type="date" class="form-control mt-2 text-center" id="inDateCheque"
+                                <label for="inFechaCheque" class="form-label mt-3">Fecha Cobro
+                                    <input type="date" class="form-control mt-2 text-center" id="inFechaCheque"
                                         aria-describedby="fecha">
                                 </label>
-                                <label for="montoPago" class="form-label mt-3">Nro de Cheque
-                                    <input type="number" class="form-control mt-2 text-center" id="inPago"
+                                <label for="inMontoCheque" class="form-label mt-3">Nro de Cheque
+                                    <input type="number" class="form-control mt-2 text-center" id="inMontoCheque"
                                         aria-describedby="montoPago">
                                 </label>
-                                <label for="montoPago" class="form-label mt-3">Nombre Emisor
-                                    <input type="number" class="form-control mt-2 text-center" id="inPago"
+                                <label for="inNombreEmisorCheque" class="form-label mt-3">Nombre Emisor
+                                    <input type="text" class="form-control mt-2 text-center" id="inNombreEmisorCheque"
                                         aria-describedby="montoPago">
                                 </label>
                                 <div>
-                                    <label for="cliente" class="form-label mt-3">Banco
+                                    <label for="opBanco" class="form-label mt-3">Banco
                                         <select class="form-select" aria-label="cliente" id="opBanco">
                                             <option selected disabled>Seleccione un Banco</option>
                                             <!-- se ingresa por dom la lista de clientes -->
@@ -103,7 +103,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-dark mt-5" id="btn-carga">Ingresar Pago</button>
+                        <button type="submit" class="btn btn-dark mt-5" id="btnCargaPago">Ingresar Pago</button>
                     </div>
                 </form>
             </div>

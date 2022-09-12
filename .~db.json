@@ -111,7 +111,15 @@
       "id": 3
     }
   ],
-  "saldos": [],
+  "saldos": [
+    {
+      "id": "2",
+      "nombre": "Telma Cordoba",
+      "debe": 0,
+      "haber": 1000,
+      "saldo": -1000
+    }
+  ],
   "pagos": [
     {
       "fechaPagp": "2022-09-12",
