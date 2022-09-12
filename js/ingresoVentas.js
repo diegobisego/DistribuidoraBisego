@@ -44,6 +44,7 @@ window.onload = function () {
 let productos = [];
 let clientes = [];
 let ventas = [];
+let tipoPago = ['Contado Efectivo', 'Transferencia', 'Cheque']
 
 /************* FETCH GET ******************/
 
@@ -102,11 +103,11 @@ const cargaClientes = () => {
 };
 
 const cargaTipoPago = () => {
-  for (const i in clientes) {
+  for (const i in tipoPago) {
     const option = document.createElement("option");
     opTipoPago.appendChild(option);
-    option.innerHTML = clientes[i].tipoPago;
-    option.setAttribute("value", clientes[i].tipoPago);
+    option.innerHTML = tipoPago[i];
+    option.setAttribute("value",tipoPago[i]);
   }
 };
 

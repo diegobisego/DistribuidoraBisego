@@ -44,15 +44,31 @@
         }
       ],
       "id": 1
+    },
+    {
+      "fecha": "2022-09-12",
+      "nroFactura": "",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Contado Efectivo",
+      "montoTotal": 3000,
+      "listaProducto": [
+        {
+          "contador": 1,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 3000
+        }
+      ],
+      "id": 2
     }
   ],
   "saldos": [
     {
       "id": 1,
       "nombre": "Jorge Perez",
-      "debe": 2000,
+      "debe": 5000,
       "haber": 1500,
-      "saldo": 500
+      "saldo": 3500
     }
   ],
   "pagos": [
