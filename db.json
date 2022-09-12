@@ -4,265 +4,68 @@
       "tipo": "Aceite Comestible",
       "tamanio": "5",
       "um": "L",
-      "precio": 2300,
-      "stock": 6000,
-      "id": 1
-    },
-    {
-      "tipo": "Aceitunas",
-      "tamanio": "5",
-      "um": "Kg",
       "precio": 3000,
-      "stock": 4000,
-      "id": 2
+      "stock": 5000,
+      "id": 1
     }
   ],
   "clientes": [
     {
       "id": 1,
-      "nombre": "Diego Bisego",
-      "dniCuit": "32934045",
-      "telefono": "3534774748",
-      "domicilio": "Carlos Pellegrini 927",
-      "Ciudad": "Villa Maria",
-      "email": "diegobisego@gmail.com",
-      "tipoPago": "Contado Efectivo"
-    },
-    {
-      "id": 2,
-      "nombre": "Telma Cordoba",
-      "dniCuit": "32541856",
-      "telefono": "324234234",
-      "domicilio": "Pellegrini 342",
-      "Ciudad": "Cordoba Capital",
-      "email": "sadasda@asdasd.com",
-      "tipoPago": "Transferencia"
-    },
-    {
-      "id": 3,
       "nombre": "Jorge Perez",
-      "dniCuit": "324324234",
-      "telefono": "3423422",
-      "domicilio": "prueba 1234",
-      "Ciudad": "Villa Maria",
+      "dniCuit": "1231564",
+      "telefono": "324324234",
+      "domicilio": "Pellegrini 342",
+      "Ciudad": "Villa Nueva",
       "email": "diegobisego@gmail.com",
-      "tipoPago": "Cheque"
+      "tipoPago": "Transferencia"
     }
   ],
   "usuarios": [
     {
       "id": 1,
-      "nombreUsuario": "diego",
+      "nombreUsuario": "Diego",
       "password": "123456"
-    },
-    {
-      "id": 2,
-      "nombreUsuario": "Jero",
-      "password": "test123"
     }
   ],
   "ventas": [
     {
-      "fecha": "2022-09-09",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
+      "fecha": "2022-09-12",
+      "nroFactura": "4324324",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Transferencia",
+      "montoTotal": 2000,
       "listaProducto": [
         {
           "contador": 1,
           "producto": "Aceite Comestible 5 L",
           "cantidad": 1,
-          "totaProduc:": 2300
+          "totaProduc:": 2000
         }
       ],
       "id": 1
-    },
-    {
-      "fecha": "2022-09-09",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 3000,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceitunas 5 Kg",
-          "cantidad": 1,
-          "totaProduc:": 3000
-        }
-      ],
-      "id": 2
-    },
-    {
-      "fecha": "2022-09-09",
-      "nroFactura": "",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 3
-    },
-    {
-      "fecha": "2022-09-12",
-      "nroFactura": "123456",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 4
-    },
-    {
-      "fecha": "2022-09-12",
-      "nroFactura": "4566",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 16100,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 7,
-          "totaProduc:": 16100
-        }
-      ],
-      "id": 5
-    },
-    {
-      "fecha": "2022-09-12",
-      "nroFactura": "123456",
-      "Cliente": "Diego Bisego",
-      "tipoPago": "Contado Efectivo",
-      "montoTotal": 2300,
-      "listaProducto": [
-        {
-          "contador": 1,
-          "producto": "Aceite Comestible 5 L",
-          "cantidad": 1,
-          "totaProduc:": 2300
-        }
-      ],
-      "id": 6
     }
   ],
   "saldos": [
     {
-      "id": "1",
-      "nombre": "Diego Bisego",
-      "debe": 20700,
-      "haber": 19000,
-      "saldo": 1700
-    },
-    {
-      "id": "2",
-      "nombre": "Telma Cordoba",
-      "debe": 0,
-      "haber": 8000,
-      "saldo": -8000
+      "id": 1,
+      "nombre": "Jorge Perez",
+      "debe": 2000,
+      "haber": 1500,
+      "saldo": 500
     }
   ],
   "pagos": [
     {
       "fechaPagp": "2022-09-12",
       "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 2000,
+      "cliente": "Jorge Perez",
+      "montoPago": 1500,
       "tipoPago": "Contado Efectivo",
       "fechaCheque": "",
       "nombreEmisorCheque": "",
       "bancoCheque": "Seleccione un Banco",
       "id": 1
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 3000,
-      "tipoPago": "Contado Efectivo",
-      "fechaCheque": "",
-      "nombreEmisorCheque": "",
-      "bancoCheque": "Seleccione un Banco",
-      "id": 2
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 1000,
-      "tipoPago": "Cheque",
-      "fechaCheque": "2022-09-22",
-      "nombreEmisorCheque": "Pedro Perez",
-      "bancoCheque": "Credicoop",
-      "id": 3
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 5000,
-      "tipoPago": "Cheque",
-      "fechaCheque": "2022-10-01",
-      "nombreEmisorCheque": "Prueba 3",
-      "bancoCheque": "Frances",
-      "id": 4
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 0,
-      "tipoPago": "Contado Efectivo",
-      "fechaCheque": "",
-      "nombreEmisorCheque": "",
-      "bancoCheque": "Seleccione un Banco",
-      "id": 5
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 0,
-      "tipoPago": "Contado Efectivo",
-      "fechaCheque": "",
-      "nombreEmisorCheque": "",
-      "bancoCheque": "Seleccione un Banco",
-      "id": 6
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 0,
-      "tipoPago": "Contado Efectivo",
-      "fechaCheque": "",
-      "nombreEmisorCheque": "",
-      "bancoCheque": "Seleccione un Banco",
-      "id": 7
-    },
-    {
-      "fechaPagp": "2022-09-12",
-      "idCliente": "1",
-      "cliente": "Diego Bisego",
-      "montoPago": 1000,
-      "tipoPago": "Contado Efectivo",
-      "fechaCheque": "",
-      "nombreEmisorCheque": "",
-      "bancoCheque": "Seleccione un Banco",
-      "id": 8
     }
   ]
 }

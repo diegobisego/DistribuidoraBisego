@@ -8,7 +8,7 @@ const alertCarga = (tipo, param) => {
         showConfirmButton: false,
         timer: 1500,
         toast: true,
-      });      
+      });
       break;
     case 2:
       Swal.fire({
@@ -19,26 +19,26 @@ const alertCarga = (tipo, param) => {
         timer: 2000,
         toast: true,
       });
-      break
-      case 3:
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: `Registro de ${param} exitoso`,
-          showConfirmButton: false,
-          timer: 1500
-        })
-      break
-      case 4:
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: `El ${param} fue modificado con exito!`,
-          showConfirmButton: false,
-          timer: 1500
-        })
-      break
-      default:  
+      break;
+    case 3:
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `Registro de ${param} exitoso`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      break;
+    case 4:
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `El ${param} fue modificado con exito!`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      break;
+    default:
       break;
   }
 };

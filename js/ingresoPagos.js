@@ -124,14 +124,11 @@ const inFechaCheque = document.querySelector("#inFechaCheque");
 const inMontoCheque = document.querySelector("#inMontoCheque");
 const inNombreEmisorCheque = document.querySelector("#inNombreEmisorCheque");
 
-
 //btn cargar pago
 btnCargaPago.addEventListener("click", () => {
-
-
-  if (inPago.value == '' || opCliente.value == 'Seleccione un cliente') {
-    invalido(6)
-    return
+  if (inPago.value == "" || opCliente.value == "Seleccione un cliente") {
+    invalido(6);
+    return;
   }
 
   let selecTipoPago;

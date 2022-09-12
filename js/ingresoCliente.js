@@ -83,11 +83,9 @@ btnCargaClientes.addEventListener("click", (e) => {
     invalido(6);
   }
 
-
-
   //verifico radio chequeado y lo paso como texto
   let selecTipoPago;
-  
+
   for (var i = 0; i < RadioTipoPago.length; i++) {
     if (RadioTipoPago[i].checked) {
       selecTipoPago = labelChecked[i].innerHTML;
