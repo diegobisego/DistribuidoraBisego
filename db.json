@@ -111,17 +111,44 @@
       "id": 3
     }
   ],
-  "saldos": [],
+  "saldos": [
+    {
+      "id": "1",
+      "nombre": "Diego Bisego",
+      "debe": 0,
+      "haber": 12000,
+      "saldo": -12000
+    },
+    {
+      "id": "2",
+      "nombre": "Telma Cordoba",
+      "debe": 0,
+      "haber": 8000,
+      "saldo": -8000
+    }
+  ],
   "pagos": [
     {
       "fechaPagp": "2022-09-12",
-      "id": "2",
-      "cliente": "Telma Cordoba",
-      "montoPago": 1000,
+      "idCliente": "1",
+      "cliente": "Diego Bisego",
+      "montoPago": 2000,
       "tipoPago": "Contado Efectivo",
       "fechaCheque": "",
       "nombreEmisorCheque": "",
-      "bancoCheque": "Seleccione un Banco"
+      "bancoCheque": "Seleccione un Banco",
+      "id": 1
+    },
+    {
+      "fechaPagp": "2022-09-12",
+      "idCliente": "1",
+      "cliente": "Diego Bisego",
+      "montoPago": 3000,
+      "tipoPago": "Contado Efectivo",
+      "fechaCheque": "",
+      "nombreEmisorCheque": "",
+      "bancoCheque": "Seleccione un Banco",
+      "id": 2
     }
   ]
 }

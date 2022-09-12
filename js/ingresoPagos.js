@@ -148,7 +148,7 @@ btnCargaPago.addEventListener("click", () => {
       break;
     }
   }
-
+  debugger;
   //funcion POST
   setTimeout(() => {
     fetch("http://localhost:5000/pagos", {
@@ -158,7 +158,7 @@ btnCargaPago.addEventListener("click", () => {
       },
       body: JSON.stringify({
         fechaPagp: inFechaPago.value,
-        id: opCliente.value,
+        idCliente: opCliente.value,
         cliente: nombreCliente,
         montoPago: Number(inPago.value),
         tipoPago: selecTipoPago,
@@ -172,13 +172,20 @@ btnCargaPago.addEventListener("click", () => {
 });
 
 const restaSaldo = (id, nombre, monto) => {
-  debugger
+  debugger;
 
-  let existe = saldos.some(elem => elem.id == id);
+  let existe = saldos.some((elem) => elem.id == id);
+  let haber;
+  let saldo;
 
   if (existe) {
-    let haber = saldos[key].haber + monto;
-    let saldo = saldos[key].saldo - monto;
+    for (const key in saldos) {
+      if (saldos[key].id == id) {
+        haber = saldos[key].haber + monto;
+        saldo = saldos[key].saldo - monto;
+        break;
+      }
+    }
 
     fetch(`http://localhost:5000/saldos/${id}`, {
       method: "PATCH",
@@ -205,4 +212,4 @@ const restaSaldo = (id, nombre, monto) => {
       }),
     });
   }
-}
+};
