@@ -208,7 +208,7 @@ btnFinalizarVenta.addEventListener("click", () => {
     }).then(agregarSaldo(total, clienteId, clienteNombre)),
       1800;
   });
-  alertCarga(3, "venta");
+  alertCarga(1, "venta");
 });
 
 /************* AGREGAR EL SALDO A LA CUENTA DEL CLIENTE ******************/

@@ -124,11 +124,16 @@ const inFechaCheque = document.querySelector("#inFechaCheque");
 const inMontoCheque = document.querySelector("#inMontoCheque");
 const inNombreEmisorCheque = document.querySelector("#inNombreEmisorCheque");
 
-//busco id de cliente
 
-// let idCliente = ;
-
+//btn cargar pago
 btnCargaPago.addEventListener("click", () => {
+
+
+  if (inPago.value == '' || opCliente.value == 'Seleccione un cliente') {
+    invalido(6)
+    return
+  }
+
   let selecTipoPago;
 
   //verifico radio chequeado y lo paso como texto
@@ -148,7 +153,7 @@ btnCargaPago.addEventListener("click", () => {
       break;
     }
   }
-  debugger;
+
   //funcion POST
   setTimeout(() => {
     fetch("http://localhost:5000/pagos", {
@@ -172,8 +177,6 @@ btnCargaPago.addEventListener("click", () => {
 });
 
 const restaSaldo = (id, nombre, monto) => {
-  debugger;
-
   let existe = saldos.some((elem) => elem.id == id);
   let haber;
   let saldo;
