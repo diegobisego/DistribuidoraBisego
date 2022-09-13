@@ -26,6 +26,11 @@
       "id": 1,
       "nombreUsuario": "Diego",
       "password": "123456"
+    },
+    {
+      "id": 2,
+      "nombreUsuario": "Matiasbisego",
+      "password": "Julio2022"
     }
   ],
   "ventas": [
@@ -60,15 +65,31 @@
         }
       ],
       "id": 2
+    },
+    {
+      "fecha": "2022-09-13",
+      "nroFactura": "",
+      "Cliente": "Jorge Perez",
+      "tipoPago": "Transferencia",
+      "montoTotal": 3000,
+      "listaProducto": [
+        {
+          "contador": 3,
+          "producto": "Aceite Comestible 5 L",
+          "cantidad": 1,
+          "totaProduc:": 3000
+        }
+      ],
+      "id": 3
     }
   ],
   "saldos": [
     {
       "id": 1,
       "nombre": "Jorge Perez",
-      "debe": 5000,
-      "haber": 1500,
-      "saldo": 3500
+      "debe": 8000,
+      "haber": 9500,
+      "saldo": -1500
     }
   ],
   "pagos": [
@@ -82,6 +103,17 @@
       "nombreEmisorCheque": "",
       "bancoCheque": "Seleccione un Banco",
       "id": 1
+    },
+    {
+      "fechaPagp": "2022-09-13",
+      "idCliente": "1",
+      "cliente": "Jorge Perez",
+      "montoPago": 8000,
+      "tipoPago": "Transferencia",
+      "fechaCheque": "",
+      "nombreEmisorCheque": "",
+      "bancoCheque": "Seleccione un Banco",
+      "id": 2
     }
   ]
 }
